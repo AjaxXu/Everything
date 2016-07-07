@@ -6,13 +6,13 @@
 //  Copyright © 2016年 Louis. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "WDAppDelegate.h"
 
-@interface AppDelegate ()
+@interface WDAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation WDAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
