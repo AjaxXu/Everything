@@ -13,6 +13,8 @@
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
 #import "UIBarButtonItem+Extension.h"
+#import "UIImage+Extension.h"
+#import "UIImageView+Extension.h"
 
 
 #define WDUserDefaults [NSUserDefaults standardUserDefaults]
@@ -45,7 +47,7 @@
 #define WDLabelColorGray [UIColor grayColor]           // 字体颜色：灰色
 #define WDCoverViewColor RGBA(0, 0, 0, 0.2)            // 黑色半透明遮盖
 #define WDTabBarNormalColor RGB(170, 170, 170)         // TabBar颜色
-#define WDTabBarSelectedColor RGB(249, 103, 80)        // TabBar选中颜色
+#define WDThemeColor RGB(0, 154, 254)        // TabBar选中颜色/ThemeColor
 
 
 #endif /* PrefixHeader_pch */

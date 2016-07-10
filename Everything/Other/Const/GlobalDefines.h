@@ -9,5 +9,7 @@
 #ifndef GlobalDefines_h
 #define GlobalDefines_h
 
+#define kUserID @"userID_wd"
+#define kUserName @"username_wd"
 
 #endif /* GlobalDefines_h */

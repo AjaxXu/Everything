@@ -22,6 +22,11 @@
 		BFD4E2AA1D320E260077AD99 /* WDCalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2A91D320E260077AD99 /* WDCalendarTableViewController.m */; };
 		BFD4E2AD1D320E440077AD99 /* WDRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2AC1D320E440077AD99 /* WDRecordTableViewController.m */; };
 		BFD4E2B01D320E5B0077AD99 /* WDMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2AF1D320E5B0077AD99 /* WDMeTableViewController.m */; };
+		BFD4E2B51D325C600077AD99 /* me.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD4E2B41D325C600077AD99 /* me.plist */; };
+		BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2B81D3266950077AD99 /* WDUserTableViewCell.m */; };
+		BFD4E2BD1D3296BB0077AD99 /* WDUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2BC1D3296BB0077AD99 /* WDUserModel.m */; };
+		BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2BF1D329AFC0077AD99 /* UIImageView+Extension.m */; };
+		BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +80,15 @@
 		BFD4E2AE1D320E5B0077AD99 /* WDMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDMeTableViewController.h; sourceTree = "<group>"; };
 		BFD4E2AF1D320E5B0077AD99 /* WDMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDMeTableViewController.m; sourceTree = "<group>"; };
 		BFD4E2B11D320E770077AD99 /* GlobalDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalDefines.h; sourceTree = "<group>"; };
+		BFD4E2B41D325C600077AD99 /* me.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = me.plist; sourceTree = "<group>"; };
+		BFD4E2B71D3266950077AD99 /* WDUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUserTableViewCell.h; sourceTree = "<group>"; };
+		BFD4E2B81D3266950077AD99 /* WDUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUserTableViewCell.m; sourceTree = "<group>"; };
+		BFD4E2BB1D3296BB0077AD99 /* WDUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDUserModel.h; sourceTree = "<group>"; };
+		BFD4E2BC1D3296BB0077AD99 /* WDUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDUserModel.m; sourceTree = "<group>"; };
+		BFD4E2BE1D329AFC0077AD99 /* UIImageView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Extension.h"; sourceTree = "<group>"; };
+		BFD4E2BF1D329AFC0077AD99 /* UIImageView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Extension.m"; sourceTree = "<group>"; };
+		BFD4E2C11D329BA40077AD99 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		C78CA0EB9161AFBD1F2E4F5D /* Pods-Everything.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everything.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Everything/Pods-Everything.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +173,7 @@
 		BF9473DB1D2EAA6600D414D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFD4E2B31D325C470077AD99 /* plist */,
 				BFD4E2B21D3210840077AD99 /* Images */,
 				BF9473E91D2EAA6600D414D9 /* LaunchScreen.storyboard */,
 				BF9473EC1D2EAA6600D414D9 /* Info.plist */,
@@ -317,6 +332,8 @@
 		BFD4E2871D31DED80077AD99 /* Host */ = {
 			isa = PBXGroup;
 			children = (
+				BFD4E2BA1D3296980077AD99 /* Models */,
+				BFD4E2B61D3266650077AD99 /* Views */,
 				BFD4E2881D31DEDE0077AD99 /* Controllers */,
 			);
 			name = Host;
@@ -359,6 +376,10 @@
 			children = (
 				BFD4E29E1D31F8010077AD99 /* UIBarButtonItem+Extension.h */,
 				BFD4E29F1D31F8010077AD99 /* UIBarButtonItem+Extension.m */,
+				BFD4E2BE1D329AFC0077AD99 /* UIImageView+Extension.h */,
+				BFD4E2BF1D329AFC0077AD99 /* UIImageView+Extension.m */,
+				BFD4E2C11D329BA40077AD99 /* UIImage+Extension.h */,
+				BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -394,6 +415,32 @@
 				BF9473E71D2EAA6600D414D9 /* Assets.xcassets */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		BFD4E2B31D325C470077AD99 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				BFD4E2B41D325C600077AD99 /* me.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		BFD4E2B61D3266650077AD99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFD4E2B71D3266950077AD99 /* WDUserTableViewCell.h */,
+				BFD4E2B81D3266950077AD99 /* WDUserTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BFD4E2BA1D3296980077AD99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFD4E2BB1D3296BB0077AD99 /* WDUserModel.h */,
+				BFD4E2BC1D3296BB0077AD99 /* WDUserModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +550,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD4E2B51D325C600077AD99 /* me.plist in Resources */,
 				BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */,
 				BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */,
 			);
@@ -580,7 +628,11 @@
 				BFD4E2A01D31F8010077AD99 /* UIBarButtonItem+Extension.m in Sources */,
 				BFD4E29D1D31F7350077AD99 /* WDTableViewController.m in Sources */,
 				BFD4E2B01D320E5B0077AD99 /* WDMeTableViewController.m in Sources */,
+				BFD4E2BD1D3296BB0077AD99 /* WDUserModel.m in Sources */,
 				BF9473DD1D2EAA6600D414D9 /* main.m in Sources */,
+				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
+				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
+				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
 				BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */,
 				BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */,
 				BFD4E2AD1D320E440077AD99 /* WDRecordTableViewController.m in Sources */,

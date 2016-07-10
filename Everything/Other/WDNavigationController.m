@@ -12,8 +12,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationBar.barTintColor = [UIColor whiteColor];
-//    self.statusBarStyle = UIStatusBarStyleLightContent;
+    self.navigationBar.barTintColor = WDThemeColor;
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.statusBarStyle = UIStatusBarStyleLightContent;
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle

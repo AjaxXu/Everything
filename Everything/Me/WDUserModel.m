@@ -1,14 +1,13 @@
 //
-//  WDMeTableViewController.h
+//  WDUserModel.m
 //  Everything
 //
 //  Created by Louis on 16/7/10.
 //  Copyright © 2016年 Louis. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WDUserModel.h"
 
-
-@interface WDMeTableViewController : UITableViewController
+@implementation WDUserModel
 
 @end

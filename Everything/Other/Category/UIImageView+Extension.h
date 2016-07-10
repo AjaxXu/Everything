@@ -1,5 +1,5 @@
 //
-//  WDMeTableViewController.h
+//  UIImageView+Extension.h
 //  Everything
 //
 //  Created by Louis on 16/7/10.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIImageView (Extension)
 
-@interface WDMeTableViewController : UITableViewController
+- (void)setHeaderWithURL: (NSURL*)url;
 
 @end
