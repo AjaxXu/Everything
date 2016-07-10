@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1760A58C3967D62015F12845 /* Pods_Everything.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */; };
 		BF9473DD1D2EAA6600D414D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9473DC1D2EAA6600D414D9 /* main.m */; };
+<<<<<<< HEAD
+=======
+		BF9473E01D2EAA6600D414D9 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9473DF1D2EAA6600D414D9 /* WDAppDelegate.m */; };
+		BF9473E61D2EAA6600D414D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E41D2EAA6600D414D9 /* Main.storyboard */; };
+>>>>>>> 583deebec5e73087410d102ac4fbe6ee1a17a408
 		BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E71D2EAA6600D414D9 /* Assets.xcassets */; };
 		BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E91D2EAA6600D414D9 /* LaunchScreen.storyboard */; };
 		BF9473F61D2EAA6600D414D9 /* EverythingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9473F51D2EAA6600D414D9 /* EverythingTests.m */; };
@@ -46,6 +51,12 @@
 		47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Everything.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9473D81D2EAA6600D414D9 /* Everything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everything.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9473DC1D2EAA6600D414D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		BF9473DE1D2EAA6600D414D9 /* WDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppDelegate.h; sourceTree = "<group>"; };
+		BF9473DF1D2EAA6600D414D9 /* WDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppDelegate.m; sourceTree = "<group>"; };
+		BF9473E51D2EAA6600D414D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+>>>>>>> 583deebec5e73087410d102ac4fbe6ee1a17a408
 		BF9473E71D2EAA6600D414D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF9473EA1D2EAA6600D414D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF9473EC1D2EAA6600D414D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,11 +157,17 @@
 		BF9473DA1D2EAA6600D414D9 /* Everything */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BFD4E28D1D31F6810077AD99 /* Other */,
 				BFD4E27D1D31DE190077AD99 /* Me */,
 				BFD4E27E1D31DE190077AD99 /* Record */,
 				BFD4E27B1D31DE0E0077AD99 /* Calendar */,
 				BFD4E27C1D31DE0E0077AD99 /* Home */,
+=======
+				BF9473DE1D2EAA6600D414D9 /* WDAppDelegate.h */,
+				BF9473DF1D2EAA6600D414D9 /* WDAppDelegate.m */,
+				BF9473E41D2EAA6600D414D9 /* Main.storyboard */,
+>>>>>>> 583deebec5e73087410d102ac4fbe6ee1a17a408
 				BF9473DB1D2EAA6600D414D9 /* Supporting Files */,
 			);
 			path = Everything;
@@ -159,7 +176,11 @@
 		BF9473DB1D2EAA6600D414D9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				BFD4E2B21D3210840077AD99 /* Images */,
+=======
+				BF9473E71D2EAA6600D414D9 /* Assets.xcassets */,
+>>>>>>> 583deebec5e73087410d102ac4fbe6ee1a17a408
 				BF9473E91D2EAA6600D414D9 /* LaunchScreen.storyboard */,
 				BF9473EC1D2EAA6600D414D9 /* Info.plist */,
 				BF9473DC1D2EAA6600D414D9 /* main.m */,
@@ -577,9 +598,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				BFD4E2A01D31F8010077AD99 /* UIBarButtonItem+Extension.m in Sources */,
 				BFD4E29D1D31F7350077AD99 /* WDTableViewController.m in Sources */,
 				BFD4E2B01D320E5B0077AD99 /* WDMeTableViewController.m in Sources */,
+=======
+				BF9473E01D2EAA6600D414D9 /* WDAppDelegate.m in Sources */,
+>>>>>>> 583deebec5e73087410d102ac4fbe6ee1a17a408
 				BF9473DD1D2EAA6600D414D9 /* main.m in Sources */,
 				BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */,
 				BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */,
