@@ -50,7 +50,7 @@
                                 action:(SEL)action {
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 40)];
     button.titleLabel.textAlignment = NSTextAlignmentRight;
-    [button setTitleColor:WDTabBarSelectedColor forState:UIControlStateNormal];
+    [button setTitleColor:WDThemeColor forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     [button setTitle:title forState:UIControlStateNormal];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -63,7 +63,7 @@
                                 target:(id)target
                                 action:(SEL)action {
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 40)];
-    [button setTitleColor:WDTabBarSelectedColor forState:UIControlStateNormal];
+    [button setTitleColor:WDThemeColor forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont systemFontOfSize:16];
     [button setTitle:title forState:UIControlStateNormal];
     [button setTitle:selTitle forState:UIControlStateSelected];

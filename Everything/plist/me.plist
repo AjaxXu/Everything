@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>点击登录</string>
+			<key>class</key>
+			<string>WDLoginViewController</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>账单</string>
+			<key>class</key>
+			<string>WDBillViewController</string>
+			<key>icon</key>
+			<string>icon_bill</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>任务</string>
+			<key>class</key>
+			<string>WDTodosViewController</string>
+			<key>icon</key>
+			<string>icon_todo</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>时间线</string>
+			<key>class</key>
+			<string>WDTimelineViewController</string>
+			<key>icon</key>
+			<string>icon_timeline</string>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>设置</string>
+			<key>class</key>
+			<string>WDSettingViewController</string>
+			<key>icon</key>
+			<string>icon_setting</string>
+		</dict>
+	</array>
+</array>
+</plist>

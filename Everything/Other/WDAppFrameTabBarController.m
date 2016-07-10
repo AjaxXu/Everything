@@ -33,7 +33,7 @@
     
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
     selectedAttrs[NSFontAttributeName] = normalAttrs[NSFontAttributeName];
-    selectedAttrs[NSForegroundColorAttributeName] = WDTabBarSelectedColor;
+    selectedAttrs[NSForegroundColorAttributeName] = WDThemeColor;
     
     UITabBarItem *appearance = [UITabBarItem appearance];
     [appearance setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
