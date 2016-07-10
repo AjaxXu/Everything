@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  WDAppDelegate.h
 //  Everything
 //
 //  Created by Louis on 16/7/7.

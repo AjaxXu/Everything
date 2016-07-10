@@ -1,0 +1,51 @@
+//
+//  PrefixHeader.pch
+//  Everything
+//
+//  Created by Louis on 16/7/10.
+//  Copyright © 2016年 Louis. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIBarButtonItem+Extension.h"
+
+
+#define WDUserDefaults [NSUserDefaults standardUserDefaults]
+#define WDScreenBounds [UIScreen mainScreen].bounds
+#define WDScreenWidth [UIScreen mainScreen].bounds.size.width
+#define WdScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#ifdef DEBUG
+#define WDLog(...) NSLog(__VA_ARGS__)
+#else
+#define WDLog(...)
+#endif
+
+#define WDLogFunc WdLog(@"%s", __func__)
+
+#define WeakSelf __weak typeof(self) weakSelf = self;
+
+/**
+ *  1.返回一个RGBA格式的UIColor对象
+ */
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+
+/**
+ *  2.返回一个RGB格式的UIColor对象
+ */
+#define RGB(r, g, b) RGBA(r, g, b, 1.0f)
+
+#define WDGlobalBackgroundColor RGB(245, 240, 215)     // 背景颜色
+#define WDLabelColorWhite RGB(255, 255, 255)           // 字体颜色：白色
+#define WDLabelColorGray [UIColor grayColor]           // 字体颜色：灰色
+#define WDCoverViewColor RGBA(0, 0, 0, 0.2)            // 黑色半透明遮盖
+#define WDTabBarNormalColor RGB(170, 170, 170)         // TabBar颜色
+#define WDTabBarSelectedColor RGB(249, 103, 80)        // TabBar选中颜色
+
+
+#endif /* PrefixHeader_pch */
