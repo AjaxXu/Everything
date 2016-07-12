@@ -17,7 +17,7 @@
 			<key>class</key>
 			<string>WDBillViewController</string>
 			<key>icon</key>
-			<string>icon_bill</string>
+			<string>me_bill</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -25,7 +25,7 @@
 			<key>class</key>
 			<string>WDTodosViewController</string>
 			<key>icon</key>
-			<string>icon_todo</string>
+			<string>me_task</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -33,7 +33,7 @@
 			<key>class</key>
 			<string>WDTimelineViewController</string>
 			<key>icon</key>
-			<string>icon_timeline</string>
+			<string>me_timeline</string>
 		</dict>
 	</array>
 	<array>
@@ -43,7 +43,7 @@
 			<key>class</key>
 			<string>WDSettingViewController</string>
 			<key>icon</key>
-			<string>icon_setting</string>
+			<string>me_setting</string>
 		</dict>
 	</array>
 </array>

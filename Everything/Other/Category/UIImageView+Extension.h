@@ -11,5 +11,5 @@
 @interface UIImageView (Extension)
 
 - (void)setHeaderWithURL: (NSURL*)url;
-
+- (void)setHeaderWithURLString: (NSString*)urlString;
 @end

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WDUserModel : NSObject
+@interface WDUserModel : NSObject<NSCoding>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *password;
-@property (nonatomic, assign) NSUInteger gender;
+@property (nonatomic, assign) NSInteger gender;
 @property (nonatomic, strong) NSString *head_image;
 
 @end
