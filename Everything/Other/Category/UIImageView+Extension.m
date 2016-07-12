@@ -24,4 +24,10 @@
                    }];
 }
 
+- (void)setHeaderWithURLString: (NSString*)urlString
+{
+    NSURL *url = [NSURL URLWithString:[kBaseURL stringByAppendingString:urlString]];
+    [self setHeaderWithURL:url];
+}
+
 @end

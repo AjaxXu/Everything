@@ -8,6 +8,10 @@
 
 #import "WDMeTableViewController.h"
 #import "WDUserTableViewCell.h"
+#import "WDNormalTableViewCell.h"
+#import "WDUserModel.h"
+#import "WDProfileViewController.h"
+#import "WDLoginViewController.h"
 #import "GlobalDefines.h"
 
 static NSString *const kProfileCellIdentifier = @"ProfileCell";
@@ -16,6 +20,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 @interface WDMeTableViewController ()
 
 @property (nonatomic, strong) NSArray *dataOfSections;
+@property (nonatomic, strong) WDUserModel *userModel;
 
 @end
 
@@ -35,12 +40,43 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 
 - (void)loadData
 {
-    if (!_dataOfSections) {
+    if (!_dataOfSections)
+    {
         _dataOfSections = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"me.plist" ofType:nil]];
         
-        if ([WDUserDefaults objectForKey:kUserID]) {
-            [[[_dataOfSections objectAtIndex:0] objectAtIndex:0] setValue:[WDUserDefaults objectForKey:kUserName] forKey:@"name"];
-            [[[_dataOfSections objectAtIndex:0] objectAtIndex:0] setValue:@"WDProfileViewController" forKey:@"class"];
+        if ([WDUserDefaults objectForKey:kUserID])
+        {
+            if ([WDUserDefaults objectForKey:@"userModel"])
+            {
+                _userModel = [WDUserModel yy_modelWithDictionary:[WDUserDefaults objectForKey:@"userModel"]];
+            }
+            else
+            {
+                [WDNetOperation getRequestWithURL:[NSString stringWithFormat:@"/users/%@", [WDUserDefaults objectForKey:kUserID]]
+                                       parameters:nil
+                                          success:^(id responseObject){
+                                              NSDictionary *dict = (NSDictionary*)responseObject;
+                                              if ([dict[@"code"] intValue] == 200)
+                                              {
+                                                  _userModel = [WDUserModel yy_modelWithDictionary:dict[@"content"]];
+                                                  [WDUserDefaults setObject: dict[@"content"] forKey:@"userModel"];
+                                                  [WDUserDefaults synchronize];
+                                              }
+                                              else
+                                              {
+                                                  _userModel = [WDUserModel new];
+                                                  _userModel.name = @"点击登录";
+                                              }
+                                              [self.tableView reloadData];
+                                          } failure:^(NSError *error) {
+                                          }];
+            }
+        }
+        else
+        {
+            _userModel = [WDUserModel new];
+            _userModel.name = @"点击登录";
+            _userModel.head_image = @"test";
         }
     }
 }
@@ -69,53 +105,74 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     NSDictionary *cellDict = [self getTableCellDictionaryWithIndexPath:indexPath];
     if (indexPath.section == 0)
     {
-        NSLog(@"string");
-        cell = [tableView dequeueReusableCellWithIdentifier:kProfileCellIdentifier forIndexPath:indexPath];
-        cell.textLabel.text = cellDict[@"name"];
+        WDUserTableViewCell* userCell = [tableView dequeueReusableCellWithIdentifier:kProfileCellIdentifier forIndexPath:indexPath];
+        userCell.model = _userModel;
+        cell = userCell;
     }
     else
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:kOtherCellIdentifier forIndexPath:indexPath];
-        cell.textLabel.text = cellDict[@"name"];
+        WDNormalTableViewCell *normalCell = [tableView dequeueReusableCellWithIdentifier:kOtherCellIdentifier forIndexPath:indexPath];
+        normalCell.nameLabel.text = cellDict[@"name"];
+        normalCell.iconImageView.image = [UIImage imageNamed:cellDict[@"icon"]];
+        cell = normalCell;
     }
-    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *vc;
+    if (indexPath.section == 0) {
+        if (![WDUserDefaults objectForKey:kUserID])
+        {
+            vc = [WDLoginViewController new];
+        }
+        else
+        {
+            WDProfileViewController *pv = [WDProfileViewController new];
+            pv.userModel = _userModel;
+            vc = pv;
+        }
+    }
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.view.backgroundColor = RGB(245, 245, 245);
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
-/*
- // Override to support conditional editing of the table view.
- - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the specified item to be editable.
- return YES;
- }
- */
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsMake(0,10, 0, 20)];
+    }
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]){
+        [cell setSeparatorInset:UIEdgeInsetsMake(0,10, 0, 20)];
+    }
+}
 
-/*
- // Override to support editing the table view.
- - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
- }
- */
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height;
+    if (indexPath.section == 0)
+    {
+        height = [WDUserTableViewCell fixedHeight];
+    }
+    else
+    {
+        height = [WDNormalTableViewCell fixedHeight];
+    }
+    return height;
+}
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
- }
- */
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 10;
+}
 
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 0.1;
+}
 
 /*
  #pragma mark - Navigation
@@ -134,10 +191,10 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 
 - (void)setupTableView
 {
-    self.tableView.backgroundColor = RGB(239, 239, 244);
-    self.view.backgroundColor = RGB(239, 239, 244);
+    self.tableView.backgroundColor = WDGlobalBackgroundColor;
+    self.view.backgroundColor = WDGlobalBackgroundColor;
     [self.tableView registerClass:[WDUserTableViewCell class] forCellReuseIdentifier:kProfileCellIdentifier];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kOtherCellIdentifier];
+    [self.tableView registerClass:[WDNormalTableViewCell class] forCellReuseIdentifier:kOtherCellIdentifier];
 }
 
 @end
