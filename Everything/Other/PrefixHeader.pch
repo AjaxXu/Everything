@@ -44,6 +44,8 @@
 
 #define WeakSelf __weak typeof(self) weakSelf = self;
 
+typedef void (^ReturnTextBlock)(NSString* text);
+
 /**
  *  1.返回一个RGBA格式的UIColor对象
  */

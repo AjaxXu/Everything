@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WDUserModel;
 
-@interface WDProfileViewController : UIViewController
+@interface WDProfileViewController : UITableViewController
 
 @property (nonatomic, strong) WDUserModel *userModel;
 

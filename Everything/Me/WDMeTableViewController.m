@@ -32,8 +32,8 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     //#warning 放在这里测试登录注册功能
     //    
-    //    [WDUserDefaults removeObjectForKey:kUserID];
-    //    [WDUserDefaults synchronize];
+    //            [WDUserDefaults removeObjectForKey:kUserID];
+    //            [WDUserDefaults synchronize];
     [super viewDidLoad];
     _cellHeights = [NSMutableDictionary new];
     [self setupTableView];
@@ -114,7 +114,6 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     UITableViewCell *cell;
     NSDictionary *cellDict = [self getTableCellDictionaryWithIndexPath:indexPath];
-    NSString *height;
     if (indexPath.section == 0)
     {
         WDUserTableViewCell* userCell = [tableView dequeueReusableCellWithIdentifier:kProfileCellIdentifier forIndexPath:indexPath];
@@ -189,6 +188,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     self.tableView.backgroundColor = WDGlobalBackgroundColor;
     self.view.backgroundColor = WDGlobalBackgroundColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self.tableView registerClass:[WDUserTableViewCell class] forCellReuseIdentifier:kProfileCellIdentifier];
     [self.tableView registerClass:[WDCommonTableViewCell class] forCellReuseIdentifier:kOtherCellIdentifier];
 }
