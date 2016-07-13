@@ -44,6 +44,11 @@
     [super viewDidLoad];
     
     NSArray *childItemsArray = @[
+                                 @{kClassKey  : @"WDMeTableViewController",
+                                   kTitleKey  : @"我",
+                                   kImgKey    : @"tabbar_me",
+                                   kSelImgKey : @"tabbar_meHL"},
+                                 
                                  @{kClassKey  : @"WDHomeTableViewController",
                                    kTitleKey  : @"首页",
                                    kImgKey    : @"tabbar_mainframe",
@@ -57,12 +62,9 @@
                                  @{kClassKey  : @"WDRecordTableViewController",
                                    kTitleKey  : @"记录",
                                    kImgKey    : @"tabbar_record",
-                                   kSelImgKey : @"tabbar_recordHL"},
+                                   kSelImgKey : @"tabbar_recordHL"}
                                  
-                                 @{kClassKey  : @"WDMeTableViewController",
-                                   kTitleKey  : @"我",
-                                   kImgKey    : @"tabbar_me",
-                                   kSelImgKey : @"tabbar_meHL"} ];
+                                 ];
     
     [childItemsArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {
         UIViewController *vc = [NSClassFromString(dict[kClassKey]) new];

@@ -85,6 +85,8 @@
     [registerButton setTitle:@"注册" forState:UIControlStateNormal];
     [registerButton setBackgroundColor:WDThemeColor forState:UIControlStateNormal];
     [registerButton setBackgroundColor:RGB(29, 120, 211) forState:UIControlStateHighlighted];
+    [registerButton.layer setMasksToBounds:YES];
+    [registerButton.layer setCornerRadius:5.0];
     [registerButton addTarget:self action:@selector(tapRegisterBtn) forControlEvents:UIControlEventTouchUpInside];
     [_registerView addSubview:registerButton];
     
@@ -134,6 +136,8 @@
     [loginButton setTitle:@"登录" forState:UIControlStateNormal];
     [loginButton setBackgroundColor:WDThemeColor forState:UIControlStateNormal];
     [loginButton setBackgroundColor:RGB(29, 120, 211) forState:UIControlStateHighlighted];
+    [loginButton.layer setMasksToBounds:YES];
+    [loginButton.layer setCornerRadius:5.0];
     [loginButton addTarget:self action:@selector(tapLoginBtn) forControlEvents:UIControlEventTouchUpInside];
     [_loginView addSubview:loginButton];
     

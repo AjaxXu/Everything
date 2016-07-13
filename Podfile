@@ -10,6 +10,7 @@ pod 'YYCache', '~>1.0.3'
 pod 'SDWebImage', '~>3.8.1'
 pod 'JSPatch', '~>1.1'
 pod 'CocoaSecurity'
+pod 'LCActionSheet'
 
 use_frameworks!
 pod 'ReactiveCocoa', '~>4.2.1'

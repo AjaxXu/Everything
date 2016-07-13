@@ -10,6 +10,8 @@
 		1760A58C3967D62015F12845 /* Pods_Everything.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */; };
 		BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */; };
 		BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */; };
+		BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F17B1D36B85800F77FF3 /* WDEditNickNameViewController.m */; };
+		BF68F17F1D36C7AF00F77FF3 /* WDAutographViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F17E1D36C7AF00F77FF3 /* WDAutographViewController.m */; };
 		BF9473DD1D2EAA6600D414D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9473DC1D2EAA6600D414D9 /* main.m */; };
 		BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E71D2EAA6600D414D9 /* Assets.xcassets */; };
 		BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E91D2EAA6600D414D9 /* LaunchScreen.storyboard */; };
@@ -71,6 +73,10 @@
 		BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Blocks.m"; sourceTree = "<group>"; };
 		BF68F1761D363D7800F77FF3 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		BF68F17A1D36B85800F77FF3 /* WDEditNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDEditNickNameViewController.h; sourceTree = "<group>"; };
+		BF68F17B1D36B85800F77FF3 /* WDEditNickNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDEditNickNameViewController.m; sourceTree = "<group>"; };
+		BF68F17D1D36C7AF00F77FF3 /* WDAutographViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAutographViewController.h; sourceTree = "<group>"; };
+		BF68F17E1D36C7AF00F77FF3 /* WDAutographViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAutographViewController.m; sourceTree = "<group>"; };
 		BF9473D81D2EAA6600D414D9 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9473DC1D2EAA6600D414D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF9473E71D2EAA6600D414D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -538,6 +544,10 @@
 			children = (
 				BFD4E2CD1D3380E00077AD99 /* WDProfileViewController.h */,
 				BFD4E2CE1D3380E00077AD99 /* WDProfileViewController.m */,
+				BF68F17A1D36B85800F77FF3 /* WDEditNickNameViewController.h */,
+				BF68F17B1D36B85800F77FF3 /* WDEditNickNameViewController.m */,
+				BF68F17D1D36C7AF00F77FF3 /* WDAutographViewController.h */,
+				BF68F17E1D36C7AF00F77FF3 /* WDAutographViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -791,6 +801,7 @@
 				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
 				BFD4E2D31D3384FC0077AD99 /* WDLoginViewController.m in Sources */,
 				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
+				BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */,
 				BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */,
 				BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */,
 				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
@@ -804,6 +815,7 @@
 				BFE313C31D354869002D6E29 /* SVProgressAnimatedView.m in Sources */,
 				BFD4E2CF1D3380E00077AD99 /* WDProfileViewController.m in Sources */,
 				BFD4E2AD1D320E440077AD99 /* WDRecordTableViewController.m in Sources */,
+				BF68F17F1D36C7AF00F77FF3 /* WDAutographViewController.m in Sources */,
 				BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */,
 				BFD4E2AA1D320E260077AD99 /* WDCalendarTableViewController.m in Sources */,
 				BFD4E2EA1D33ACD20077AD99 /* LTInfiniteScrollView.m in Sources */,

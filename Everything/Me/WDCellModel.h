@@ -22,6 +22,7 @@ typedef NS_ENUM(NSInteger, WDTableViewCellIndicatiorType) {
 @property (nonatomic, strong) NSString *rightImageName;
 @property (nonatomic, assign) NSInteger rightImageHeight;
 @property (nonatomic, assign) WDTableViewCellIndicatiorType indicatorType;
+@property (nonatomic, assign) BOOL canSelect;
 @property (nonatomic, strong) NSString *class;
 
 @end

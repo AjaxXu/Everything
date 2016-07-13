@@ -56,39 +56,63 @@
     _titleLabel.text = _model.title;
     CGFloat margin = 20;
     
-    if (_model.iconImageName) {
-        _iconImageView = [UIImageView new];
-        _iconImageView.image = [UIImage imageNamed:_model.iconImageName];
-        [self.contentView addSubview:_iconImageView];
-        
-        _iconImageView.sd_layout
-        .leftSpaceToView(self.contentView, margin)
-        .widthIs(_model.iconImageHeight)
-        .heightEqualToWidth()
-        .centerYEqualToView(self.contentView);
-        
-        _titleLabel.sd_layout.leftSpaceToView(_iconImageView, 15);
+    if (_model.iconImageName)
+    {
+        if (_iconImageView)
+        {
+            _iconImageView.image = [UIImage imageNamed:_model.iconImageName];
+            _iconImageView.sd_layout.widthIs(model.iconImageHeight);
+        }
+        else
+        {
+            _iconImageView = [UIImageView new];
+            _iconImageView.image = [UIImage imageNamed:_model.iconImageName];
+            [self.contentView addSubview:_iconImageView];
+            
+            _iconImageView.sd_layout
+            .leftSpaceToView(self.contentView, margin)
+            .widthIs(_model.iconImageHeight)
+            .heightEqualToWidth()
+            .centerYEqualToView(self.contentView);
+            
+            _titleLabel.sd_layout.leftSpaceToView(_iconImageView, 15);
+        }
     }
     
     if (_model.indicatorType != WDTableViewCellIndicatorTypeNone)
     {
-        _indicatorView = [UIImageView new];
-        _indicatorView.image = [UIImage imageNamed:@"indicator"];
-        [self.contentView addSubview:_indicatorView];
-        
-        _indicatorView.sd_layout
-        .rightSpaceToView(self.contentView, 10)
-        .widthIs(30)
-        .heightEqualToWidth()
-        .centerYEqualToView(self.contentView);
+        if (_indicatorView)
+        {
+            
+        }
+        else
+        {
+            _indicatorView = [UIImageView new];
+            _indicatorView.image = [UIImage imageNamed:@"indicator"];
+            [self.contentView addSubview:_indicatorView];
+            
+            _indicatorView.sd_layout
+            .rightSpaceToView(self.contentView, 10)
+            .widthIs(30)
+            .heightEqualToWidth()
+            .centerYEqualToView(self.contentView);
+        }
     }
     
     if (_model.rightImageName)
     {
-        NSLog(@"right image name");
-        _rightImageView = [UIImageView new];
-        //        [_rightImageView setHeaderWithURLString: _model.rightImageName];
-        _rightImageView.image = [UIImage imageNamed:_model.rightImageName];
+        if (!_rightImageView) {
+            _rightImageView = [UIImageView new];
+        }
+        
+        if ([UIImage imageNamed:_model.rightImageName])
+        {
+            _rightImageView.image = [UIImage imageNamed:_model.rightImageName];
+        }
+        else
+        {
+            [_rightImageView setHeaderWithURLString: _model.rightImageName];
+        }
         [self.contentView addSubview:_rightImageView];
         
         _rightImageView.sd_layout
@@ -104,20 +128,23 @@
     
     if (_model.desc)
     {
-        NSLog(@"%@", _model.desc);
-        _descLabel = [UILabel new];
-        _descLabel.text = _model.desc;
-        _descLabel.textColor = [UIColor grayColor];
-        _descLabel.textAlignment = NSTextAlignmentRight;
-        _descLabel.font = [UIFont systemFontOfSize:17];
-        [self.contentView addSubview:_descLabel];
-        
-        _descLabel.sd_layout
-        .rightSpaceToView(_indicatorView? _indicatorView : self.contentView, _indicatorView? 0 : 10)
-        .leftSpaceToView(_titleLabel, 0)
-        .heightIs(20)
-        .centerYEqualToView(self.contentView);
-        [_descLabel setSingleLineAutoResizeWithMaxWidth:200];
+        if (_descLabel) {
+            _descLabel.text = _model.desc;
+        }else{
+            _descLabel = [UILabel new];
+            _descLabel.text = _model.desc;
+            _descLabel.textColor = [UIColor grayColor];
+            _descLabel.textAlignment = NSTextAlignmentRight;
+            _descLabel.font = [UIFont systemFontOfSize:17];
+            [self.contentView addSubview:_descLabel];
+            
+            _descLabel.sd_layout
+            .rightSpaceToView(_indicatorView? _indicatorView : self.contentView, _indicatorView? 0 : 20)
+            .leftSpaceToView(_titleLabel, 0)
+            .heightIs(20)
+            .centerYEqualToView(self.contentView);
+            [_descLabel setSingleLineAutoResizeWithMaxWidth:200];
+        }
     }
     
 }
