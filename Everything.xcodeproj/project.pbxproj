@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1760A58C3967D62015F12845 /* Pods_Everything.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */; };
 		BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */; };
+		BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */; };
 		BF9473DD1D2EAA6600D414D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BF9473DC1D2EAA6600D414D9 /* main.m */; };
 		BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E71D2EAA6600D414D9 /* Assets.xcassets */; };
 		BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF9473E91D2EAA6600D414D9 /* LaunchScreen.storyboard */; };
@@ -29,13 +30,21 @@
 		BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2BF1D329AFC0077AD99 /* UIImageView+Extension.m */; };
 		BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */; };
 		BFD4E2C71D333D260077AD99 /* WDNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C61D333D260077AD99 /* WDNetOperation.m */; };
-		BFD4E2CA1D337DD30077AD99 /* WDNormalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C91D337DD30077AD99 /* WDNormalTableViewCell.m */; };
 		BFD4E2CF1D3380E00077AD99 /* WDProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2CE1D3380E00077AD99 /* WDProfileViewController.m */; };
 		BFD4E2D31D3384FC0077AD99 /* WDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2D21D3384FC0077AD99 /* WDLoginViewController.m */; };
 		BFD4E2EA1D33ACD20077AD99 /* LTInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2E91D33ACD20077AD99 /* LTInfiniteScrollView.m */; };
 		BFD4E2ED1D33B1B30077AD99 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2EC1D33B1B30077AD99 /* UIButton+Extension.m */; };
 		BFD4E2F11D33CB710077AD99 /* WDLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2F01D33CB710077AD99 /* WDLabelView.m */; };
 		BFD4E2F51D33D2B90077AD99 /* WDLoginEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2F41D33D2B90077AD99 /* WDLoginEditView.m */; };
+		BFE313B71D35118A002D6E29 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313B61D35118A002D6E29 /* Utils.m */; };
+		BFE313C21D354869002D6E29 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313BA1D354869002D6E29 /* SVIndefiniteAnimatedView.m */; };
+		BFE313C31D354869002D6E29 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313BC1D354869002D6E29 /* SVProgressAnimatedView.m */; };
+		BFE313C41D354869002D6E29 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BFE313BD1D354869002D6E29 /* SVProgressHUD.bundle */; };
+		BFE313C51D354869002D6E29 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313BF1D354869002D6E29 /* SVProgressHUD.m */; };
+		BFE313C61D354869002D6E29 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313C11D354869002D6E29 /* SVRadialGradientLayer.m */; };
+		BFE313C81D35491E002D6E29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE313C71D35491E002D6E29 /* QuartzCore.framework */; };
+		BFE313CB1D35EE79002D6E29 /* WDCommonTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313CA1D35EE79002D6E29 /* WDCommonTableViewCell.m */; };
+		BFE313CE1D35EEA3002D6E29 /* WDCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313CD1D35EEA3002D6E29 /* WDCellModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +69,9 @@
 		47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Everything.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F979E1D34915C0002AE6A /* UITextField+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Blocks.h"; sourceTree = "<group>"; };
 		BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Blocks.m"; sourceTree = "<group>"; };
-		BF9473D81D2EAA6600D414D9 /* Everything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everything.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF68F1761D363D7800F77FF3 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		BF9473D81D2EAA6600D414D9 /* EVE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVE.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF9473DC1D2EAA6600D414D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BF9473E71D2EAA6600D414D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF9473EA1D2EAA6600D414D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,8 +113,6 @@
 		BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		BFD4E2C51D333D260077AD99 /* WDNetOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNetOperation.h; sourceTree = "<group>"; };
 		BFD4E2C61D333D260077AD99 /* WDNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNetOperation.m; sourceTree = "<group>"; };
-		BFD4E2C81D337DD30077AD99 /* WDNormalTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDNormalTableViewCell.h; sourceTree = "<group>"; };
-		BFD4E2C91D337DD30077AD99 /* WDNormalTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNormalTableViewCell.m; sourceTree = "<group>"; };
 		BFD4E2CD1D3380E00077AD99 /* WDProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDProfileViewController.h; sourceTree = "<group>"; };
 		BFD4E2CE1D3380E00077AD99 /* WDProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDProfileViewController.m; sourceTree = "<group>"; };
 		BFD4E2D11D3384FC0077AD99 /* WDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginViewController.h; sourceTree = "<group>"; };
@@ -116,6 +125,22 @@
 		BFD4E2F01D33CB710077AD99 /* WDLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLabelView.m; sourceTree = "<group>"; };
 		BFD4E2F31D33D2B90077AD99 /* WDLoginEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginEditView.h; sourceTree = "<group>"; };
 		BFD4E2F41D33D2B90077AD99 /* WDLoginEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLoginEditView.m; sourceTree = "<group>"; };
+		BFE313B51D35118A002D6E29 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		BFE313B61D35118A002D6E29 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		BFE313B91D354869002D6E29 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		BFE313BA1D354869002D6E29 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		BFE313BB1D354869002D6E29 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		BFE313BC1D354869002D6E29 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		BFE313BD1D354869002D6E29 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		BFE313BE1D354869002D6E29 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		BFE313BF1D354869002D6E29 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		BFE313C01D354869002D6E29 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		BFE313C11D354869002D6E29 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		BFE313C71D35491E002D6E29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BFE313C91D35EE79002D6E29 /* WDCommonTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCommonTableViewCell.h; sourceTree = "<group>"; };
+		BFE313CA1D35EE79002D6E29 /* WDCommonTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCommonTableViewCell.m; sourceTree = "<group>"; };
+		BFE313CC1D35EEA3002D6E29 /* WDCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCellModel.h; sourceTree = "<group>"; };
+		BFE313CD1D35EEA3002D6E29 /* WDCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCellModel.m; sourceTree = "<group>"; };
 		C78CA0EB9161AFBD1F2E4F5D /* Pods-Everything.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Everything.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Everything/Pods-Everything.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE313C81D35491E002D6E29 /* QuartzCore.framework in Frameworks */,
 				1760A58C3967D62015F12845 /* Pods_Everything.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,6 +174,7 @@
 		898497D833109BFC5F7BBA82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFE313C71D35491E002D6E29 /* QuartzCore.framework */,
 				47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */,
 			);
 			name = Frameworks;
@@ -177,7 +204,7 @@
 		BF9473D91D2EAA6600D414D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BF9473D81D2EAA6600D414D9 /* Everything.app */,
+				BF9473D81D2EAA6600D414D9 /* EVE.app */,
 				BF9473F11D2EAA6600D414D9 /* EverythingTests.xctest */,
 				BF9473FC1D2EAA6600D414D9 /* EverythingUITests.xctest */,
 			);
@@ -394,7 +421,7 @@
 				BFD4E2C41D333D0D0077AD99 /* Operation */,
 				BFD4E2711D3156CA0077AD99 /* AppDelegate */,
 				BFD4E28E1D31F6810077AD99 /* Category */,
-				BFD4E28F1D31F6810077AD99 /* Const */,
+				BFD4E28F1D31F6810077AD99 /* Utils */,
 				BFD4E2901D31F6810077AD99 /* Controllers */,
 				BFD4E2911D31F6810077AD99 /* Views */,
 				BFD4E2A11D3203450077AD99 /* PrefixHeader.pch */,
@@ -415,15 +442,20 @@
 				BFD4E2EC1D33B1B30077AD99 /* UIButton+Extension.m */,
 				BF1F979E1D34915C0002AE6A /* UITextField+Blocks.h */,
 				BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */,
+				BF68F1761D363D7800F77FF3 /* NSDictionary+Extension.h */,
+				BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		BFD4E28F1D31F6810077AD99 /* Const */ = {
+		BFD4E28F1D31F6810077AD99 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				BFD4E2B11D320E770077AD99 /* GlobalDefines.h */,
+				BFE313B51D35118A002D6E29 /* Utils.h */,
+				BFE313B61D35118A002D6E29 /* Utils.m */,
 			);
+			name = Utils;
 			path = Const;
 			sourceTree = "<group>";
 		};
@@ -467,8 +499,8 @@
 			children = (
 				BFD4E2B71D3266950077AD99 /* WDUserTableViewCell.h */,
 				BFD4E2B81D3266950077AD99 /* WDUserTableViewCell.m */,
-				BFD4E2C81D337DD30077AD99 /* WDNormalTableViewCell.h */,
-				BFD4E2C91D337DD30077AD99 /* WDNormalTableViewCell.m */,
+				BFE313C91D35EE79002D6E29 /* WDCommonTableViewCell.h */,
+				BFE313CA1D35EE79002D6E29 /* WDCommonTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -478,6 +510,8 @@
 			children = (
 				BFD4E2BB1D3296BB0077AD99 /* WDUserModel.h */,
 				BFD4E2BC1D3296BB0077AD99 /* WDUserModel.m */,
+				BFE313CC1D35EEA3002D6E29 /* WDCellModel.h */,
+				BFE313CD1D35EEA3002D6E29 /* WDCellModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -521,6 +555,7 @@
 		BFD4E2E61D33AC710077AD99 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				BFE313B81D354869002D6E29 /* SVProgressHUD */,
 				BFD4E2E71D33ACD20077AD99 /* LTInfiniteScrollView */,
 			);
 			path = Vender;
@@ -544,6 +579,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		BFE313B81D354869002D6E29 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BFE313B91D354869002D6E29 /* SVIndefiniteAnimatedView.h */,
+				BFE313BA1D354869002D6E29 /* SVIndefiniteAnimatedView.m */,
+				BFE313BB1D354869002D6E29 /* SVProgressAnimatedView.h */,
+				BFE313BC1D354869002D6E29 /* SVProgressAnimatedView.m */,
+				BFE313BD1D354869002D6E29 /* SVProgressHUD.bundle */,
+				BFE313BE1D354869002D6E29 /* SVProgressHUD.h */,
+				BFE313BF1D354869002D6E29 /* SVProgressHUD.m */,
+				BFE313C01D354869002D6E29 /* SVRadialGradientLayer.h */,
+				BFE313C11D354869002D6E29 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -564,7 +615,7 @@
 			);
 			name = Everything;
 			productName = Everything;
-			productReference = BF9473D81D2EAA6600D414D9 /* Everything.app */;
+			productReference = BF9473D81D2EAA6600D414D9 /* EVE.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BF9473F01D2EAA6600D414D9 /* EverythingTests */ = {
@@ -654,6 +705,7 @@
 				BFD4E2B51D325C600077AD99 /* me.plist in Resources */,
 				BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */,
 				BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */,
+				BFE313C41D354869002D6E29 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,23 +778,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFE313C21D354869002D6E29 /* SVIndefiniteAnimatedView.m in Sources */,
 				BFD4E2A01D31F8010077AD99 /* UIBarButtonItem+Extension.m in Sources */,
 				BFD4E29D1D31F7350077AD99 /* WDTableViewController.m in Sources */,
 				BFD4E2B01D320E5B0077AD99 /* WDMeTableViewController.m in Sources */,
 				BFD4E2BD1D3296BB0077AD99 /* WDUserModel.m in Sources */,
+				BFE313C51D354869002D6E29 /* SVProgressHUD.m in Sources */,
 				BF9473DD1D2EAA6600D414D9 /* main.m in Sources */,
+				BFE313C61D354869002D6E29 /* SVRadialGradientLayer.m in Sources */,
 				BFD4E2ED1D33B1B30077AD99 /* UIButton+Extension.m in Sources */,
 				BFD4E2C71D333D260077AD99 /* WDNetOperation.m in Sources */,
 				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
 				BFD4E2D31D3384FC0077AD99 /* WDLoginViewController.m in Sources */,
 				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
+				BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */,
 				BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */,
 				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
 				BFD4E2F51D33D2B90077AD99 /* WDLoginEditView.m in Sources */,
-				BFD4E2CA1D337DD30077AD99 /* WDNormalTableViewCell.m in Sources */,
 				BFD4E2F11D33CB710077AD99 /* WDLabelView.m in Sources */,
 				BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */,
 				BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */,
+				BFE313CE1D35EEA3002D6E29 /* WDCellModel.m in Sources */,
+				BFE313B71D35118A002D6E29 /* Utils.m in Sources */,
+				BFE313CB1D35EE79002D6E29 /* WDCommonTableViewCell.m in Sources */,
+				BFE313C31D354869002D6E29 /* SVProgressAnimatedView.m in Sources */,
 				BFD4E2CF1D3380E00077AD99 /* WDProfileViewController.m in Sources */,
 				BFD4E2AD1D320E440077AD99 /* WDRecordTableViewController.m in Sources */,
 				BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */,
@@ -889,7 +948,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.Tsinghua.Everything;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVE;
 			};
 			name = Debug;
 		};
@@ -903,7 +962,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.Tsinghua.Everything;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = EVE;
 			};
 			name = Release;
 		};

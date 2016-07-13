@@ -8,8 +8,9 @@
 
 #import "WDMeTableViewController.h"
 #import "WDUserTableViewCell.h"
-#import "WDNormalTableViewCell.h"
+#import "WDCommonTableViewCell.h"
 #import "WDUserModel.h"
+#import "WDCellModel.h"
 #import "WDProfileViewController.h"
 #import "WDLoginViewController.h"
 #import "GlobalDefines.h"
@@ -21,15 +22,21 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 
 @property (nonatomic, strong) NSArray *dataOfSections;
 @property (nonatomic, strong) WDUserModel *userModel;
+@property (nonatomic, strong) NSMutableDictionary *cellHeights;
 
 @end
 
 @implementation WDMeTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+    //#warning 放在这里测试登录注册功能
+    //    
+    //    [WDUserDefaults removeObjectForKey:kUserID];
+    //    [WDUserDefaults synchronize];
     [super viewDidLoad];
+    _cellHeights = [NSMutableDictionary new];
     [self setupTableView];
-    [self loadData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -38,47 +45,51 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self loadData];
+}
+
 - (void)loadData
 {
-    if (!_dataOfSections)
+    _dataOfSections = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"me.plist" ofType:nil]];
+    
+    if ([WDUserDefaults objectForKey: kUserID])
     {
-        _dataOfSections = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"me.plist" ofType:nil]];
-        
-        if ([WDUserDefaults objectForKey:kUserID])
+        if ([WDUserDefaults objectForKey: kUserModel])
         {
-            if ([WDUserDefaults objectForKey:@"userModel"])
-            {
-                _userModel = [WDUserModel yy_modelWithDictionary:[WDUserDefaults objectForKey:@"userModel"]];
-            }
-            else
-            {
-                [WDNetOperation getRequestWithURL:[NSString stringWithFormat:@"/users/%@", [WDUserDefaults objectForKey:kUserID]]
-                                       parameters:nil
-                                          success:^(id responseObject){
-                                              NSDictionary *dict = (NSDictionary*)responseObject;
-                                              if ([dict[@"code"] intValue] == 200)
-                                              {
-                                                  _userModel = [WDUserModel yy_modelWithDictionary:dict[@"content"]];
-                                                  [WDUserDefaults setObject: dict[@"content"] forKey:@"userModel"];
-                                                  [WDUserDefaults synchronize];
-                                              }
-                                              else
-                                              {
-                                                  _userModel = [WDUserModel new];
-                                                  _userModel.name = @"点击登录";
-                                              }
-                                              [self.tableView reloadData];
-                                          } failure:^(NSError *error) {
-                                          }];
-            }
+            _userModel = [WDUserModel yy_modelWithDictionary:[WDUserDefaults objectForKey: kUserModel]];
         }
         else
         {
-            _userModel = [WDUserModel new];
-            _userModel.name = @"点击登录";
-            _userModel.head_image = @"test";
+            [WDNetOperation getRequestWithURL:[NSString stringWithFormat:@"/users/%@", [WDUserDefaults objectForKey:kUserID]]
+                                   parameters:nil
+                                      success:^(id responseObject){
+                                          NSDictionary *dict = (NSDictionary*)responseObject;
+                                          if ([dict[@"code"] intValue] == 200)
+                                          {
+                                              _userModel = [WDUserModel yy_modelWithDictionary:dict[@"content"]];
+                                              [WDUserDefaults setObject: dict[@"content"] forKey: kUserModel];
+                                              [WDUserDefaults synchronize];
+                                          }
+                                          else
+                                          {
+                                              _userModel = [WDUserModel new];
+                                              _userModel.username = @"点击登录";
+                                          }
+                                          [self.tableView reloadData];
+                                      } failure:^(NSError *error) {
+                                      }];
         }
     }
+    else
+    {
+        _userModel = [WDUserModel new];
+        _userModel.username = @"点击登录";
+        _userModel.head_image = @"test";
+    }
+    // view will appear 如果登录注册成功，就重新reload
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -103,20 +114,23 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     UITableViewCell *cell;
     NSDictionary *cellDict = [self getTableCellDictionaryWithIndexPath:indexPath];
+    NSString *height;
     if (indexPath.section == 0)
     {
         WDUserTableViewCell* userCell = [tableView dequeueReusableCellWithIdentifier:kProfileCellIdentifier forIndexPath:indexPath];
         userCell.model = _userModel;
         cell = userCell;
+        [_cellHeights setHeight:[WDUserTableViewCell fixedHeight] withIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     else
     {
-        WDNormalTableViewCell *normalCell = [tableView dequeueReusableCellWithIdentifier:kOtherCellIdentifier forIndexPath:indexPath];
-        normalCell.nameLabel.text = cellDict[@"name"];
-        normalCell.iconImageView.image = [UIImage imageNamed:cellDict[@"icon"]];
+        WDCommonTableViewCell *normalCell = [tableView dequeueReusableCellWithIdentifier:kOtherCellIdentifier forIndexPath:indexPath];
+        WDCellModel *cellModel = [WDCellModel yy_modelWithDictionary:cellDict];
+        normalCell.model = cellModel;
+        [_cellHeights setHeight:[normalCell fixedHeight] withIndexPath:indexPath];
         cell = normalCell;
     }
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -152,16 +166,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height;
-    if (indexPath.section == 0)
-    {
-        height = [WDUserTableViewCell fixedHeight];
-    }
-    else
-    {
-        height = [WDNormalTableViewCell fixedHeight];
-    }
-    return height;
+    return [_cellHeights getHeightWithIndexPath:indexPath];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -174,15 +179,6 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     return 0.1;
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 - (NSDictionary *)getTableCellDictionaryWithIndexPath: (NSIndexPath *)indexpath
 {
@@ -194,7 +190,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     self.tableView.backgroundColor = WDGlobalBackgroundColor;
     self.view.backgroundColor = WDGlobalBackgroundColor;
     [self.tableView registerClass:[WDUserTableViewCell class] forCellReuseIdentifier:kProfileCellIdentifier];
-    [self.tableView registerClass:[WDNormalTableViewCell class] forCellReuseIdentifier:kOtherCellIdentifier];
+    [self.tableView registerClass:[WDCommonTableViewCell class] forCellReuseIdentifier:kOtherCellIdentifier];
 }
 
 @end

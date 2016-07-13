@@ -12,37 +12,53 @@
 	</array>
 	<array>
 		<dict>
-			<key>name</key>
+			<key>iconImageHeight</key>
+			<integer>20</integer>
+			<key>indicatorType</key>
+			<integer>1</integer>
+			<key>title</key>
 			<string>账单</string>
 			<key>class</key>
 			<string>WDBillViewController</string>
-			<key>icon</key>
+			<key>iconImageName</key>
 			<string>me_bill</string>
 		</dict>
 		<dict>
-			<key>name</key>
+			<key>iconImageHeight</key>
+			<integer>20</integer>
+			<key>title</key>
 			<string>任务</string>
+			<key>indicatorType</key>
+			<integer>1</integer>
 			<key>class</key>
 			<string>WDTodosViewController</string>
-			<key>icon</key>
+			<key>iconImageName</key>
 			<string>me_task</string>
 		</dict>
 		<dict>
-			<key>name</key>
+			<key>iconImageHeight</key>
+			<integer>20</integer>
+			<key>indicatorType</key>
+			<integer>1</integer>
+			<key>title</key>
 			<string>时间线</string>
 			<key>class</key>
 			<string>WDTimelineViewController</string>
-			<key>icon</key>
+			<key>iconImageName</key>
 			<string>me_timeline</string>
 		</dict>
 	</array>
 	<array>
 		<dict>
-			<key>name</key>
+			<key>title</key>
 			<string>设置</string>
+			<key>iconImageHeight</key>
+			<integer>20</integer>
+			<key>indicatorType</key>
+			<integer>1</integer>
 			<key>class</key>
 			<string>WDSettingViewController</string>
-			<key>icon</key>
+			<key>iconImageName</key>
 			<string>me_setting</string>
 		</dict>
 	</array>

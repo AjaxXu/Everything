@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BF9473D71D2EAA6600D414D9"
-               BuildableName = "Everything.app"
+               BuildableName = "EVE.app"
                BlueprintName = "Everything"
                ReferencedContainer = "container:Everything.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9473D71D2EAA6600D414D9"
-            BuildableName = "Everything.app"
+            BuildableName = "EVE.app"
             BlueprintName = "Everything"
             ReferencedContainer = "container:Everything.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9473D71D2EAA6600D414D9"
-            BuildableName = "Everything.app"
+            BuildableName = "EVE.app"
             BlueprintName = "Everything"
             ReferencedContainer = "container:Everything.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BF9473D71D2EAA6600D414D9"
-            BuildableName = "Everything.app"
+            BuildableName = "EVE.app"
             BlueprintName = "Everything"
             ReferencedContainer = "container:Everything.xcodeproj">
          </BuildableReference>

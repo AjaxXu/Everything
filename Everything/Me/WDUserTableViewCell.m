@@ -60,7 +60,7 @@
 - (void)setModel:(WDUserModel *)model
 {
     _model = model;
-    _nameLabel.text = [NSString stringWithFormat:@"%@", model.name];
+    _nameLabel.text = [NSString stringWithFormat:@"%@", model.username];
     [_iconImageView setHeaderWithURLString: model.head_image];
 }
 

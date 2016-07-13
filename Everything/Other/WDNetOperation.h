@@ -14,5 +14,6 @@ typedef void (^success)(id responseObject);
 typedef void (^failure)(NSError *error);
 
 + (void)getRequestWithURL:(NSString *)URLString parameters:(id)parameters success:(success)success failure:(failure)failure;
++ (void)postRequestWithURL:(NSString *)URLString parameters:(id)parameters success:(success)success failure:(failure)failure;
 
 @end

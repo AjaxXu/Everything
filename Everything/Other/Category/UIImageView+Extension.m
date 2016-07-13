@@ -26,6 +26,9 @@
 
 - (void)setHeaderWithURLString: (NSString*)urlString
 {
+    if (!urlString) {
+        urlString = @"";
+    }
     NSURL *url = [NSURL URLWithString:[kBaseURL stringByAppendingString:urlString]];
     [self setHeaderWithURL:url];
 }
