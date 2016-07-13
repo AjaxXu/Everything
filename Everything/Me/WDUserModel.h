@@ -10,9 +10,12 @@
 
 @interface WDUserModel : NSObject<NSCoding>
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, assign) NSInteger gender;
 @property (nonatomic, strong) NSString *head_image;
+@property (nonatomic, strong) NSString *create_date;
+@property (nonatomic, strong) NSString *phone_number;
+@property (nonatomic, assign) NSInteger userid;
 
 @end

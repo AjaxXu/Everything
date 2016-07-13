@@ -41,7 +41,7 @@
         _nameLabel.sd_layout
         .leftSpaceToView(self, edgeInsets.left)
         .centerYEqualToView(self)
-        .topEqualToView(self)
+        .topEqualToView(self).minWidthIs(50)
         .bottomEqualToView(self);
         [_nameLabel setSingleLineAutoResizeWithMaxWidth:200];
         

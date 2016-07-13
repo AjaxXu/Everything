@@ -12,20 +12,26 @@
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
-    [aCoder encodeObject:_name forKey:@"name"];
+    [aCoder encodeObject:_username forKey:@"username"];
     [aCoder encodeObject:_password forKey:@"password"];
     [aCoder encodeObject:_head_image forKey:@"head_image"];
     [aCoder encodeInteger:_gender forKey:@"gender"];
+    [aCoder encodeObject:_create_date forKey:@"create_date"];
+    [aCoder encodeObject:_phone_number forKey:@"phone_number"];
+    [aCoder encodeInteger:_userid forKey:@"userid"];
 }
 
 - (instancetype)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super init])
     {
-        self.name = [aDecoder decodeObjectForKey:@"name"];
+        self.username = [aDecoder decodeObjectForKey:@"username"];
         self.password = [aDecoder decodeObjectForKey:@"password"];
         self.head_image = [aDecoder decodeObjectForKey:@"head_image"];
         self.gender = [aDecoder decodeIntegerForKey:@"gender"];
+        self.head_image = [aDecoder decodeObjectForKey:@"create_date"];
+        self.gender = [aDecoder decodeIntegerForKey:@"userid"];
+        self.head_image = [aDecoder decodeObjectForKey:@"phone_number"];
     }
     return self;
 }
