@@ -12,6 +12,7 @@
 #import "WDCellModel.h"
 #import "WDEditNickNameViewController.h"
 #import "WDAutographViewController.h"
+#import "ChooseCityViewController.h"
 
 
 static NSString *const kCellIdentifier = @"ProfileCell";
@@ -30,13 +31,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     [super viewDidLoad];
     [self setupView];
     [self loadData];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
-    [WDUserDefaults setObject:userDict forKey:kUserModel];
-    [WDUserDefaults synchronize];
 }
 
 - (void)loadData
@@ -133,6 +127,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
         [enmVC returnText:^(NSString *text) {
             WDCellModel *model = [weakSelf.modelArrays objectAtIndex:1];
             model.desc = text;
+            weakSelf.userModel.nickname = text;
             [weakSelf.modelArrays replaceObjectAtIndex:1 withObject:model];
             [weakSelf.tableView reloadData];
         }];
@@ -152,15 +147,29 @@ static NSString *const kCellIdentifier = @"ProfileCell";
         actionSheet.tag = 103;
         [actionSheet showInView:self.view];
     }
+    else if (indexPath.row == 4)
+    {
+        ChooseCityViewController *ccVC = [ChooseCityViewController new];
+        WeakSelf
+        ccVC.selectCity = ^(ChooseCityModel *cityModel){
+            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:4];
+            model.desc = cityModel.name;
+            weakSelf.userModel.address = cityModel.name;
+            [weakSelf.modelArrays replaceObjectAtIndex:4 withObject:model];
+            [weakSelf.tableView reloadData];
+        };
+        [self.navigationController pushViewController:ccVC animated:YES];
+    }
     else if (indexPath.row == 5)
     {
         WDAutographViewController *aVC = [WDAutographViewController new];
-        aVC.autograph = ((WDCellModel*)[_modelArrays objectAtIndex:4]).desc;
+        aVC.autograph = ((WDCellModel*)[_modelArrays objectAtIndex:5]).desc;
         WeakSelf
         [aVC returnText:^(NSString *text) {
-            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:4];
+            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:5];
             model.desc = text;
-            [weakSelf.modelArrays replaceObjectAtIndex:1 withObject:model];
+            weakSelf.userModel.autograph = text;
+            [weakSelf.modelArrays replaceObjectAtIndex:5 withObject:model];
             [weakSelf.tableView reloadData];
         }];
         [self.navigationController pushViewController:aVC animated:YES];
@@ -271,7 +280,32 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.view.backgroundColor = WDGlobalBackgroundColor;
     [self.tableView registerClass:[WDCommonTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 60, 44);
+    button.backgroundColor = [UIColor clearColor];
+    //设置button正常状态下的图片
+    [button setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    //button图片的偏移量，距上左下右分别(10, 10, 10, 60)像素点
+    button.imageEdgeInsets = UIEdgeInsetsMake(3, -7, 3, 44);
+    [button setTitle:@"我" forState:UIControlStateNormal];
+    //button标题的偏移量，这个偏移量是相对于图片的
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, -28, 0, 0);
+    //设置button正常状态下的标题颜色
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget: self action: @selector(doBack) forControlEvents: UIControlEventTouchUpInside];
+    UIBarButtonItem* item=[[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = item;
 }
 
+- (void)doBack
+{
+    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
+    [WDUserDefaults setObject:userDict forKey:kUserModel];
+    [WDUserDefaults synchronize];
+    NSString *tableID = [WDUserDefaults objectForKey:kUserID];
+    [WDNetOperation postRequestWithURL:[NSString stringWithFormat:@"/users/%@", tableID] parameters:userDict success:nil failure:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end
