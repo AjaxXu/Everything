@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FSCalendar.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSPatch.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -92,7 +97,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>28B5F9FF6938C459584ECC853EB019B1</key>
+		<key>25399BC568D130215BAD99697F54900A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,27 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AAB8C2C9AFC0FDC3BC5609E1619CC5B</key>
+		<key>868010619D7E6CBA5C6E6E2874668C85</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3DEDF2A37BD220A709B313881296E41F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3FC9745552D2E75517FCF7DAC6A8C3B6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>444949C841AC2DA4EF2428F936809A01</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>76E24021D77B11DF555AA732DD58FC5B</key>
+		<key>8C6AE57816DA0C45A83B9B320B835802</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -132,27 +122,47 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>93206E14AFBE961F98BF3F6D30DEC3CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93A6C69E997E1E32E57989342E723F4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94747861A6D7215AD8AF3A82E512DF75</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A215EC7E98603274893EF303AA916FA4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A67B02D549361F22662CF8642977F28B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B13574E17EED8AAA9A85CE67AD5B4570</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B93CA94ABAFFDEDBFCD64597F3930F09</key>
+		<key>B5ACE51E439C9105B4DE27936095D819</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D0726EEE9BFCB5878C806FECA2C9171D</key>
+		<key>BFDA5743AC4871BDA924A537BD779795</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EBF1E96EB69C83D509A272C4362EE174</key>
 		<dict>
 			<key>primary</key>
 			<true/>

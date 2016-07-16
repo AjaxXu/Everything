@@ -32,8 +32,8 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     //#warning 放在这里测试登录注册功能
     //    
-    //            [WDUserDefaults removeObjectForKey:kUserID];
-    //            [WDUserDefaults synchronize];
+    //                [WDUserDefaults removeObjectForKey:kUserID];
+    //                [WDUserDefaults synchronize];
     [super viewDidLoad];
     _cellHeights = [NSMutableDictionary new];
     [self setupTableView];
@@ -86,7 +86,6 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     {
         _userModel = [WDUserModel new];
         _userModel.username = @"点击登录";
-        _userModel.head_image = @"test";
     }
     // view will appear 如果登录注册成功，就重新reload
     [self.tableView reloadData];

@@ -28,6 +28,15 @@
 {
     if (!urlString) {
         urlString = @"";
+    } else {
+        NSString *filename = [[urlString componentsSeparatedByString:@"/"] lastObject];
+        NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        
+        NSString *imageFile = [imageDir stringByAppendingPathComponent: filename];
+        NSData * data = [NSData dataWithContentsOfFile:imageFile];
+        UIImage * image = [UIImage imageWithData:data];
+        self.image = [image circleImage];
+        return;
     }
     NSURL *url = [NSURL URLWithString:[kBaseURL stringByAppendingString:urlString]];
     [self setHeaderWithURL:url];
