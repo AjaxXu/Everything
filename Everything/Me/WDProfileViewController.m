@@ -12,7 +12,7 @@
 #import "WDCellModel.h"
 #import "WDEditNickNameViewController.h"
 #import "WDAutographViewController.h"
-
+#import "ChooseCityViewController.h"
 
 static NSString *const kCellIdentifier = @"ProfileCell";
 
@@ -20,6 +20,8 @@ static NSString *const kCellIdentifier = @"ProfileCell";
 
 @property (nonatomic, strong) NSMutableArray *modelArrays;
 @property (nonatomic, strong) NSMutableDictionary *cellHeights;
+@property (strong, nonatomic) UIProgressView *progressView;
+
 
 @end
 
@@ -30,13 +32,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     [super viewDidLoad];
     [self setupView];
     [self loadData];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
-    [WDUserDefaults setObject:userDict forKey:kUserModel];
-    [WDUserDefaults synchronize];
 }
 
 - (void)loadData
@@ -133,6 +128,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
         [enmVC returnText:^(NSString *text) {
             WDCellModel *model = [weakSelf.modelArrays objectAtIndex:1];
             model.desc = text;
+            weakSelf.userModel.nickname = text;
             [weakSelf.modelArrays replaceObjectAtIndex:1 withObject:model];
             [weakSelf.tableView reloadData];
         }];
@@ -152,15 +148,29 @@ static NSString *const kCellIdentifier = @"ProfileCell";
         actionSheet.tag = 103;
         [actionSheet showInView:self.view];
     }
+    else if (indexPath.row == 4)
+    {
+        ChooseCityViewController *ccVC = [ChooseCityViewController new];
+        WeakSelf
+        ccVC.selectCity = ^(ChooseCityModel *cityModel){
+            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:4];
+            model.desc = cityModel.name;
+            weakSelf.userModel.address = cityModel.name;
+            [weakSelf.modelArrays replaceObjectAtIndex:4 withObject:model];
+            [weakSelf.tableView reloadData];
+        };
+        [self.navigationController pushViewController:ccVC animated:YES];
+    }
     else if (indexPath.row == 5)
     {
         WDAutographViewController *aVC = [WDAutographViewController new];
-        aVC.autograph = ((WDCellModel*)[_modelArrays objectAtIndex:4]).desc;
+        aVC.autograph = ((WDCellModel*)[_modelArrays objectAtIndex:5]).desc;
         WeakSelf
         [aVC returnText:^(NSString *text) {
-            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:4];
+            WDCellModel *model = [weakSelf.modelArrays objectAtIndex:5];
             model.desc = text;
-            [weakSelf.modelArrays replaceObjectAtIndex:1 withObject:model];
+            weakSelf.userModel.autograph = text;
+            [weakSelf.modelArrays replaceObjectAtIndex:5 withObject:model];
             [weakSelf.tableView reloadData];
         }];
         [self.navigationController pushViewController:aVC animated:YES];
@@ -248,10 +258,50 @@ static NSString *const kCellIdentifier = @"ProfileCell";
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
-    [picker dismissViewControllerAnimated:YES completion:nil];;
+    [picker dismissViewControllerAnimated:YES completion:nil];
     UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     // 上传图片
-    [self uploadImage: image];
+    // 压缩图片
+    NSData *fileData = UIImageJPEGRepresentation(image, 0.5);
+    //保存到Documents
+    NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName = [NSString stringWithFormat:@"%@.jpg",[WDUserDefaults objectForKey:kUserID]];
+    
+    NSString *imageFile = [imageDir stringByAppendingPathComponent: fileName];
+    //    NSLog(@"%@",imageFile);
+    self.progressView.hidden = NO;
+    [WDNetOperation postDataWithURL:[NSString stringWithFormat:@"/users/%@/head_image", [WDUserDefaults objectForKey:kUserID]] parameters:nil fileData:fileData name:@"head_image" fileName:fileName mimeType:@"image/jpeg" progress:^(NSProgress *uploadProgress) {
+        //上传进度
+        // @property int64_t totalUnitCount;    需要下载文件的总大小
+        // @property int64_t completedUnitCount; 当前已经下载的大小
+        //
+        // 给Progress添加监听 KVO
+        //        NSLog(@"%f",1.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+        // 回到主队列刷新UI,用户自定义的进度条
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.progressView.progress = 1.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount;
+        });
+    } success:^(id responseObject) {
+        
+        self.progressView.hidden = YES;
+        NSLog(@"%@", responseObject);
+        [fileData writeToFile:imageFile atomically:YES];
+        //保存至相册
+        if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            WDCellModel *model = [_modelArrays objectAtIndex:0];
+            _userModel.head_image = responseObject[@"content"][@"head_image"];
+            model.rightImageName = _userModel.head_image;
+            [_modelArrays replaceObjectAtIndex:0 withObject:model];
+            [self.tableView reloadData];
+        });
+    } failure: ^(NSError *error){
+        self.progressView.hidden = YES;
+        NSLog(@"%@", error);
+    }];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -259,10 +309,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)uploadImage:(UIImage*)image
-{
-    return;
-}
 
 - (void)setupView
 {
@@ -271,7 +317,40 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.view.backgroundColor = WDGlobalBackgroundColor;
     [self.tableView registerClass:[WDCommonTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, 60, 44);
+    button.backgroundColor = [UIColor clearColor];
+    //设置button正常状态下的图片
+    [button setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
+    //button图片的偏移量，距上左下右分别(10, 10, 10, 60)像素点
+    button.imageEdgeInsets = UIEdgeInsetsMake(3, -7, 3, 44);
+    [button setTitle:@"我" forState:UIControlStateNormal];
+    //button标题的偏移量，这个偏移量是相对于图片的
+    button.titleEdgeInsets = UIEdgeInsetsMake(0, -28, 0, 0);
+    //设置button正常状态下的标题颜色
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button addTarget: self action: @selector(doBack) forControlEvents: UIControlEventTouchUpInside];
+    UIBarButtonItem* item=[[UIBarButtonItem alloc]initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = item;
+    
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    self.progressView.hidden = YES;
 }
 
+- (void)doBack
+{
+    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
+    [WDUserDefaults setObject:userDict forKey:kUserModel];
+    [WDUserDefaults synchronize];
+    NSString *tableID = [WDUserDefaults objectForKey:kUserID];
+    [WDNetOperation postRequestWithURL:[NSString stringWithFormat:@"/users/%@", tableID] parameters:userDict success:nil failure:nil];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark 图片保存完毕的回调
+- (void) image: (UIImage *) image didFinishSavingWithError:(NSError *) error contextInfo: (void *)contextIn {
+    NSLog(@"照片保存成功");
+}
 
 @end

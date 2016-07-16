@@ -103,6 +103,7 @@
     {
         if (!_rightImageView) {
             _rightImageView = [UIImageView new];
+            [self.contentView addSubview:_rightImageView];
         }
         
         if ([UIImage imageNamed:_model.rightImageName])
@@ -113,7 +114,7 @@
         {
             [_rightImageView setHeaderWithURLString: _model.rightImageName];
         }
-        [self.contentView addSubview:_rightImageView];
+        
         
         _rightImageView.sd_layout
         .rightSpaceToView(_indicatorView? _indicatorView : self.contentView, _indicatorView? 0 : 10)
