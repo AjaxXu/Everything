@@ -38,6 +38,8 @@
 		BFA12B851D41D7A700E0221B /* WDActionSheetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B841D41D7A700E0221B /* WDActionSheetViewController.m */; };
 		BFA12B881D41E48E00E0221B /* WDActionSheetPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B871D41E48E00E0221B /* WDActionSheetPickerView.m */; };
 		BFA12B8B1D41F91600E0221B /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B8A1D41F91600E0221B /* NSDate+Utilities.m */; };
+		BFA12B9C1D4228F400E0221B /* WDLoginEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B9B1D4228F400E0221B /* WDLoginEditView.m */; };
+		BFA12B9F1D4228FC00E0221B /* WDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */; };
 		BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */; };
 		BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2961D31F7350077AD99 /* WDAppFrameTabBarController.m */; };
 		BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2981D31F7350077AD99 /* WDNavigationController.m */; };
@@ -54,11 +56,9 @@
 		BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C21D329BA40077AD99 /* UIImage+Extension.m */; };
 		BFD4E2C71D333D260077AD99 /* WDNetOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2C61D333D260077AD99 /* WDNetOperation.m */; };
 		BFD4E2CF1D3380E00077AD99 /* WDProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2CE1D3380E00077AD99 /* WDProfileViewController.m */; };
-		BFD4E2D31D3384FC0077AD99 /* WDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2D21D3384FC0077AD99 /* WDLoginViewController.m */; };
 		BFD4E2EA1D33ACD20077AD99 /* LTInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2E91D33ACD20077AD99 /* LTInfiniteScrollView.m */; };
 		BFD4E2ED1D33B1B30077AD99 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2EC1D33B1B30077AD99 /* UIButton+Extension.m */; };
 		BFD4E2F11D33CB710077AD99 /* WDLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2F01D33CB710077AD99 /* WDLabelView.m */; };
-		BFD4E2F51D33D2B90077AD99 /* WDLoginEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2F41D33D2B90077AD99 /* WDLoginEditView.m */; };
 		BFE313B71D35118A002D6E29 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313B61D35118A002D6E29 /* Utils.m */; };
 		BFE313C21D354869002D6E29 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313BA1D354869002D6E29 /* SVIndefiniteAnimatedView.m */; };
 		BFE313C31D354869002D6E29 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFE313BC1D354869002D6E29 /* SVProgressAnimatedView.m */; };
@@ -154,6 +154,10 @@
 		BFA12B871D41E48E00E0221B /* WDActionSheetPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDActionSheetPickerView.m; sourceTree = "<group>"; };
 		BFA12B891D41F91600E0221B /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
 		BFA12B8A1D41F91600E0221B /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		BFA12B9A1D4228F400E0221B /* WDLoginEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDLoginEditView.h; path = Login/WDLoginEditView.h; sourceTree = "<group>"; };
+		BFA12B9B1D4228F400E0221B /* WDLoginEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDLoginEditView.m; path = Login/WDLoginEditView.m; sourceTree = "<group>"; };
+		BFA12B9D1D4228FC00E0221B /* WDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginViewController.h; sourceTree = "<group>"; };
+		BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLoginViewController.m; sourceTree = "<group>"; };
 		BFD4E2921D31F7250077AD99 /* WDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppDelegate.h; path = Other/WDAppDelegate.h; sourceTree = "<group>"; };
 		BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDAppDelegate.m; path = Other/WDAppDelegate.m; sourceTree = "<group>"; };
 		BFD4E2951D31F7350077AD99 /* WDAppFrameTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppFrameTabBarController.h; path = Other/WDAppFrameTabBarController.h; sourceTree = "<group>"; };
@@ -187,16 +191,12 @@
 		BFD4E2C61D333D260077AD99 /* WDNetOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDNetOperation.m; sourceTree = "<group>"; };
 		BFD4E2CD1D3380E00077AD99 /* WDProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDProfileViewController.h; sourceTree = "<group>"; };
 		BFD4E2CE1D3380E00077AD99 /* WDProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDProfileViewController.m; sourceTree = "<group>"; };
-		BFD4E2D11D3384FC0077AD99 /* WDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginViewController.h; sourceTree = "<group>"; };
-		BFD4E2D21D3384FC0077AD99 /* WDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLoginViewController.m; sourceTree = "<group>"; };
 		BFD4E2E81D33ACD20077AD99 /* LTInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTInfiniteScrollView.h; sourceTree = "<group>"; };
 		BFD4E2E91D33ACD20077AD99 /* LTInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTInfiniteScrollView.m; sourceTree = "<group>"; };
 		BFD4E2EB1D33B1B30077AD99 /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
 		BFD4E2EC1D33B1B30077AD99 /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		BFD4E2EF1D33CB710077AD99 /* WDLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLabelView.h; sourceTree = "<group>"; };
 		BFD4E2F01D33CB710077AD99 /* WDLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLabelView.m; sourceTree = "<group>"; };
-		BFD4E2F31D33D2B90077AD99 /* WDLoginEditView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginEditView.h; sourceTree = "<group>"; };
-		BFD4E2F41D33D2B90077AD99 /* WDLoginEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLoginEditView.m; sourceTree = "<group>"; };
 		BFE313B51D35118A002D6E29 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		BFE313B61D35118A002D6E29 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		BFE313B91D354869002D6E29 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -392,6 +392,91 @@
 			path = ActionSheetPicker;
 			sourceTree = "<group>";
 		};
+		BFA12B8C1D4227FF00E0221B /* AlarmClock */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12B911D42281100E0221B /* Controllers */,
+			);
+			path = AlarmClock;
+			sourceTree = "<group>";
+		};
+		BFA12B8D1D4227FF00E0221B /* Bill */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12B921D42281A00E0221B /* Controllers */,
+			);
+			path = Bill;
+			sourceTree = "<group>";
+		};
+		BFA12B8E1D4227FF00E0221B /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12B931D42282200E0221B /* Controllers */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		BFA12B8F1D4227FF00E0221B /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12B941D42282B00E0221B /* Controllers */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		BFA12B901D4227FF00E0221B /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12B951D42283100E0221B /* Controllers */,
+			);
+			path = Timeline;
+			sourceTree = "<group>";
+		};
+		BFA12B911D42281100E0221B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BFA12B921D42281A00E0221B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BFA12B931D42282200E0221B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BFA12B941D42282B00E0221B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BFA12B951D42283100E0221B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		BFA12B961D42285500E0221B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BFD4E2F21D33D14A0077AD99 /* Views */,
+				BFA12B9D1D4228FC00E0221B /* WDLoginViewController.h */,
+				BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		BFD4E2711D3156CA0077AD99 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,8 +526,13 @@
 		BFD4E27D1D31DE190077AD99 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				BFD4E2D01D3384EB0077AD99 /* Login */,
+				BFA12B8C1D4227FF00E0221B /* AlarmClock */,
+				BFA12B8D1D4227FF00E0221B /* Bill */,
+				BFA12B8E1D4227FF00E0221B /* Setting */,
+				BFA12B8F1D4227FF00E0221B /* Task */,
+				BFA12B901D4227FF00E0221B /* Timeline */,
 				BFD4E2CB1D3380990077AD99 /* Profile */,
+				BFA12B961D42285500E0221B /* Login */,
 				BFD4E2871D31DED80077AD99 /* Host */,
 			);
 			path = Me;
@@ -686,16 +776,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		BFD4E2D01D3384EB0077AD99 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				BFD4E2F21D33D14A0077AD99 /* Views */,
-				BFD4E2D11D3384FC0077AD99 /* WDLoginViewController.h */,
-				BFD4E2D21D3384FC0077AD99 /* WDLoginViewController.m */,
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
 		BFD4E2E61D33AC710077AD99 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,10 +799,11 @@
 		BFD4E2F21D33D14A0077AD99 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BFD4E2F31D33D2B90077AD99 /* WDLoginEditView.h */,
-				BFD4E2F41D33D2B90077AD99 /* WDLoginEditView.m */,
+				BFA12B9A1D4228F400E0221B /* WDLoginEditView.h */,
+				BFA12B9B1D4228F400E0221B /* WDLoginEditView.m */,
 			);
 			name = Views;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BFE313B81D354869002D6E29 /* SVProgressHUD */ = {
@@ -944,9 +1025,9 @@
 				BFE313C61D354869002D6E29 /* SVRadialGradientLayer.m in Sources */,
 				BF68F1A91D374D3C00F77FF3 /* CLLocation+YCLocation.m in Sources */,
 				BFD4E2ED1D33B1B30077AD99 /* UIButton+Extension.m in Sources */,
+				BFA12B9C1D4228F400E0221B /* WDLoginEditView.m in Sources */,
 				BFD4E2C71D333D260077AD99 /* WDNetOperation.m in Sources */,
 				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
-				BFD4E2D31D3384FC0077AD99 /* WDLoginViewController.m in Sources */,
 				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
 				BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */,
 				BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */,
@@ -955,7 +1036,6 @@
 				BF68F1B51D374D3C00F77FF3 /* SqlDataBase.m in Sources */,
 				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
 				BF68F1AE1D374D3C00F77FF3 /* MASViewAttribute.m in Sources */,
-				BFD4E2F51D33D2B90077AD99 /* WDLoginEditView.m in Sources */,
 				BFA12B8B1D41F91600E0221B /* NSDate+Utilities.m in Sources */,
 				BFD4E2F11D33CB710077AD99 /* WDLabelView.m in Sources */,
 				BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */,
@@ -975,6 +1055,7 @@
 				BFD4E2AA1D320E260077AD99 /* WDCalendarTableViewController.m in Sources */,
 				BF68F1AF1D374D3C00F77FF3 /* MASViewConstraint.m in Sources */,
 				BFD4E2EA1D33ACD20077AD99 /* LTInfiniteScrollView.m in Sources */,
+				BFA12B9F1D4228FC00E0221B /* WDLoginViewController.m in Sources */,
 				BFD4E2A71D320DE50077AD99 /* WDHomeTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

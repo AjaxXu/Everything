@@ -12,6 +12,18 @@
 	</array>
 	<array>
 		<dict>
+			<key>title</key>
+			<string>闹钟</string>
+			<key>class</key>
+			<string>WDAlarmClockViewController</string>
+			<key>indicatorType</key>
+			<integer>1</integer>
+			<key>iconImageHeight</key>
+			<integer>20</integer>
+			<key>iconImageName</key>
+			<string>me_alarm</string>
+		</dict>
+		<dict>
 			<key>iconImageHeight</key>
 			<integer>20</integer>
 			<key>indicatorType</key>

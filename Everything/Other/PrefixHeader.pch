@@ -30,6 +30,15 @@
 
 
 #define WDUserDefaults [NSUserDefaults standardUserDefaults]
+
+#define WDUserDefaultSetObjectForKey(__VALUE__,__KEY__) \
+{\
+[[NSUserDefaults standardUserDefaults] setObject:__VALUE__ forKey:__KEY__];\
+[[NSUserDefaults standardUserDefaults] synchronize];\
+}
+
+#define WDUserDefaultObjectForKey(__KEY__)  [[NSUserDefaults standardUserDefaults] objectForKey:__KEY__]
+
 #define WDScreenBounds [UIScreen mainScreen].bounds
 #define WDScreenWidth [UIScreen mainScreen].bounds.size.width
 #define WdScreenHeight [UIScreen mainScreen].bounds.size.height

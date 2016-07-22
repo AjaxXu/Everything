@@ -150,6 +150,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
     vc.hidesBottomBarWhenPushed = YES;
     vc.view.backgroundColor = RGB(245, 245, 245);
     [self.navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
