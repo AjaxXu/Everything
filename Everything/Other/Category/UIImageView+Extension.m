@@ -20,6 +20,16 @@
                                NSError *error,
                                SDImageCacheType cacheType,
                                NSURL *imageURL) {
+                       if (image) {
+                           NSData *fileData = UIImageJPEGRepresentation(image, 1);
+                           //保存到Documents
+                           NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                           NSString *fileName = [NSString stringWithFormat:@"%@.jpg",[WDUserDefaults objectForKey:kUserID]];
+                           
+                           NSString *imageFile = [imageDir stringByAppendingPathComponent: fileName];
+                           [fileData writeToFile:imageFile atomically:YES];
+                       }
+                       
                        self.image = image ? [image circleImage] : placeholder;
                    }];
 }
@@ -34,9 +44,11 @@
         
         NSString *imageFile = [imageDir stringByAppendingPathComponent: filename];
         NSData * data = [NSData dataWithContentsOfFile:imageFile];
-        UIImage * image = [UIImage imageWithData:data];
-        self.image = [image circleImage];
-        return;
+        if (data) {
+            UIImage * image = [UIImage imageWithData:data];
+            self.image = [image circleImage];
+            return;
+        }
     }
     NSURL *url = [NSURL URLWithString:[kBaseURL stringByAppendingString:urlString]];
     [self setHeaderWithURL:url];

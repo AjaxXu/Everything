@@ -32,8 +32,8 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 {
     //#warning 放在这里测试登录注册功能
     //    
-    //                [WDUserDefaults removeObjectForKey:kUserID];
-    //                [WDUserDefaults synchronize];
+    //    [WDUserDefaults removeObjectForKey:kUserID];
+    //    [WDUserDefaults synchronize];
     [super viewDidLoad];
     _cellHeights = [NSMutableDictionary new];
     [self setupTableView];

@@ -20,8 +20,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
 
 @property (nonatomic, strong) NSMutableArray *modelArrays;
 @property (nonatomic, strong) NSMutableDictionary *cellHeights;
-@property (strong, nonatomic) UIProgressView *progressView;
-
 
 @end
 
@@ -269,7 +267,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     
     NSString *imageFile = [imageDir stringByAppendingPathComponent: fileName];
     //    NSLog(@"%@",imageFile);
-    self.progressView.hidden = NO;
+    [SVProgressHUD show];
     [WDNetOperation postDataWithURL:[NSString stringWithFormat:@"/users/%@/head_image", [WDUserDefaults objectForKey:kUserID]] parameters:nil fileData:fileData name:@"head_image" fileName:fileName mimeType:@"image/jpeg" progress:^(NSProgress *uploadProgress) {
         //上传进度
         // @property int64_t totalUnitCount;    需要下载文件的总大小
@@ -279,12 +277,12 @@ static NSString *const kCellIdentifier = @"ProfileCell";
         //        NSLog(@"%f",1.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
         // 回到主队列刷新UI,用户自定义的进度条
         dispatch_async(dispatch_get_main_queue(), ^{
-            self.progressView.progress = 1.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount;
+            CGFloat progress = 1.0 * uploadProgress.completedUnitCount / uploadProgress.totalUnitCount;
+            [SVProgressHUD showProgress:progress];
         });
     } success:^(id responseObject) {
         
-        self.progressView.hidden = YES;
-        NSLog(@"%@", responseObject);
+        [SVProgressHUD showSuccessWithStatus:@"上传头像成功" duration:1.5];
         [fileData writeToFile:imageFile atomically:YES];
         //保存至相册
         if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
@@ -299,7 +297,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
             [self.tableView reloadData];
         });
     } failure: ^(NSError *error){
-        self.progressView.hidden = YES;
+        [SVProgressHUD showErrorWithStatus:@"上传头像失败" duration:1.5];
         NSLog(@"%@", error);
     }];
 }
@@ -334,8 +332,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     UIBarButtonItem* item=[[UIBarButtonItem alloc]initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = item;
     
-    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    self.progressView.hidden = YES;
 }
 
 - (void)doBack
