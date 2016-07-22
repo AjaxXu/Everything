@@ -44,26 +44,25 @@
     [super viewDidLoad];
     
     NSArray *childItemsArray = @[
-                                 @{kClassKey  : @"WDMeTableViewController",
-                                   kTitleKey  : @"我",
-                                   kImgKey    : @"tabbar_me",
-                                   kSelImgKey : @"tabbar_meHL"},
+                                 @{kClassKey  : @"WDCalendarTableViewController",
+                                   kTitleKey  : @"日历",
+                                   kImgKey    : @"tabbar_calendar",
+                                   kSelImgKey : @"tabbar_calendarHL"},
                                  
                                  @{kClassKey  : @"WDHomeTableViewController",
                                    kTitleKey  : @"首页",
                                    kImgKey    : @"tabbar_mainframe",
                                    kSelImgKey : @"tabbar_mainframeHL"},
                                  
-                                 @{kClassKey  : @"WDCalendarTableViewController",
-                                   kTitleKey  : @"日历",
-                                   kImgKey    : @"tabbar_calendar",
-                                   kSelImgKey : @"tabbar_calendarHL"},
-                                 
                                  @{kClassKey  : @"WDRecordTableViewController",
                                    kTitleKey  : @"记录",
                                    kImgKey    : @"tabbar_record",
-                                   kSelImgKey : @"tabbar_recordHL"}
+                                   kSelImgKey : @"tabbar_recordHL"},
                                  
+                                 @{kClassKey  : @"WDMeTableViewController",
+                                   kTitleKey  : @"我",
+                                   kImgKey    : @"tabbar_me",
+                                   kSelImgKey : @"tabbar_meHL"}
                                  ];
     
     [childItemsArray enumerateObjectsUsingBlock:^(NSDictionary *dict, NSUInteger idx, BOOL *stop) {

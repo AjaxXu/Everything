@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WDCalendarTableViewController : UITableViewController
+@interface WDCalendarTableViewController : UIViewController
 
 @end

@@ -225,7 +225,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     collectionViewLayout.calendar = self;
     
     FSCalendarCollectionView *collectionView = [[FSCalendarCollectionView alloc] initWithFrame:CGRectZero
+<<<<<<< HEAD
                                                           collectionViewLayout:collectionViewLayout];
+=======
+                                                                          collectionViewLayout:collectionViewLayout];
+>>>>>>> develop
     collectionView.dataSource = self;
     collectionView.delegate = self;
     collectionView.backgroundColor = [UIColor clearColor];
@@ -293,7 +297,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> develop
     _supressEvent = YES;
     
     if (_needsAdjustingViewFrame) {
@@ -311,7 +319,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         } else {
             _contentView.frame = self.bounds;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> develop
         if (_needsLayoutForWeekMode) _scope = FSCalendarScopeMonth;
         
         CGFloat headerHeight = self.preferredHeaderHeight;
@@ -333,7 +345,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
                                             weekdayWidth,
                                             weekdayHeight);
         }];
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> develop
         _deliver.frame = CGRectMake(_header.fs_left, _header.fs_top, _header.fs_width, headerHeight+weekdayHeight);
         _deliver.hidden = _header.hidden;
         if (!self.floatingMode) {
@@ -753,7 +769,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         switch (_scope) {
             case FSCalendarScopeMonth: {
                 _supressEvent = YES;
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> develop
                 _collectionViewLayout.scrollDirection = (UICollectionViewScrollDirection)scrollDirection;
                 _header.scrollDirection = _collectionViewLayout.scrollDirection;
                 if (self.hasValidateVisibleLayout) {
@@ -1092,9 +1112,15 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     if (_scope != scope) {
         
 #define m_set_scope \
+<<<<<<< HEAD
         [self willChangeValueForKey:@"scope"]; \
         _scope = scope; \
         [self didChangeValueForKey:@"scope"]; \
+=======
+[self willChangeValueForKey:@"scope"]; \
+_scope = scope; \
+[self didChangeValueForKey:@"scope"]; \
+>>>>>>> develop
 
         if (self.floatingMode) {
             m_set_scope
@@ -1755,7 +1781,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
 - (BOOL)shouldDeselectDate:(NSDate *)date
 {
     if (_delegate && [_delegate respondsToSelector:@selector(calendar:shouldDeselectDate:)]) {
+<<<<<<< HEAD
        return [_delegate calendar:self shouldDeselectDate:date];
+=======
+        return [_delegate calendar:self shouldDeselectDate:date];
+>>>>>>> develop
     }
     return YES;
 }
@@ -1955,6 +1985,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     if (_dataSource && [_dataSource respondsToSelector:@selector(calendar:hasEventForDate:)]) {
         return [_dataSource calendar:self hasEventForDate:date];
     }
+<<<<<<< HEAD
     #pragma GCC diagnostic pop
     
 #else
@@ -1967,6 +1998,20 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
         if ([@[@20,@25] containsObject:@([self dayOfDate:date])]) {
             return 3;
         }
+=======
+#pragma GCC diagnostic pop
+    
+#else
+    if ([@[@3,@5] containsObject:@([self dayOfDate:date])]) {
+        return 1;
+    }
+    if ([@[@8,@16] containsObject:@([self dayOfDate:date])]) {
+        return 2;
+    }
+    if ([@[@20,@25] containsObject:@([self dayOfDate:date])]) {
+        return 3;
+    }
+>>>>>>> develop
 #endif
     return 0;
     
