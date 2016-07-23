@@ -44,7 +44,7 @@
     [super viewDidLoad];
     
     NSArray *childItemsArray = @[
-                                 @{kClassKey  : @"WDCalendarTableViewController",
+                                 @{kClassKey  : @"WDAlarmClockViewController",
                                    kTitleKey  : @"日历",
                                    kImgKey    : @"tabbar_calendar",
                                    kSelImgKey : @"tabbar_calendarHL"},

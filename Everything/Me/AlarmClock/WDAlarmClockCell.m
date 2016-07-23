@@ -7,7 +7,6 @@
 //
 
 #import "WDAlarmClockCell.h"
-#import "Everything-Swift.h"
 #import "WDAlarmClockModel.h"
 #import "YYText.h"
 
@@ -15,7 +14,6 @@
 
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) YYLabel *titleRepeatLabel;
-@property (nonatomic, strong) TKSimpleSwitch *isAlarmSwitch;
 
 @end
 
@@ -34,53 +32,53 @@
 - (void)setupView
 {
     _timeLabel = [UILabel new];
-    _timeLabel.font = [UIFont systemFontOfSize:22];
+    _timeLabel.font = [UIFont systemFontOfSize:40];
     [self.contentView addSubview:_timeLabel];
     
     _titleRepeatLabel = [YYLabel new];
-    _titleRepeatLabel.font = [UIFont systemFontOfSize:15];
-    [self.contentView addSubview:_timeLabel];
+    _titleRepeatLabel.frame = CGRectMake(20, 60, 220, 20);
+    [self.contentView addSubview:_titleRepeatLabel];
     
-    _isAlarmSwitch = [TKSimpleSwitch new];
+    _isAlarmSwitch = [ZJSwitch new];
+    _isAlarmSwitch.onText = @"ON";
+    _isAlarmSwitch.offText = @"OFF";
+    _isAlarmSwitch.textFont = [UIFont systemFontOfSize:15];
     [self.contentView addSubview:_isAlarmSwitch];
     
     _timeLabel.sd_layout
-    .leftSpaceToView(self.contentView, 0)
-    .heightIs(60);
+    .leftSpaceToView(self.contentView, 20)
+    .bottomSpaceToView(_titleRepeatLabel, 5)
+    .heightIs(50);
     [_timeLabel setSingleLineAutoResizeWithMaxWidth:200];
     
-    _titleRepeatLabel.sd_layout.leftEqualToView(_timeLabel).topSpaceToView(_timeLabel, 5).bottomSpaceToView(self.contentView, 5).heightIs(20).maxWidthIs(220);
+    _isAlarmSwitch.sd_layout.rightSpaceToView(self.contentView, 15).centerYEqualToView(self.contentView).heightIs(50).widthIs(70);
     
-    _isAlarmSwitch.sd_layout.rightSpaceToView(self.contentView, 15).centerYEqualToView(self.contentView).heightIs(30).widthIs(50);
 }
 
 - (void)setModel:(WDAlarmClockModel *)model
 {
-    NSLog(@"1111");
     _model = model;
-    if (_model.isAlarm) {
-        self.tintColor = [UIColor blackColor];
-        self.backgroundColor = [UIColor whiteColor];
-    } else {
-        self.tintColor = [UIColor grayColor];
-        self.backgroundColor = RGB(161, 160, 165);
-    }
+    
     _isAlarmSwitch.on = _model.isAlarm;
-    NSLog(@"222");
     
     _timeLabel.text = [NSString stringWithFormat:@"%02lu:%02lu", (unsigned long)_model.hour, (unsigned long)_model.minute];
     NSString *dayString = [self getAlarmClockRepeatDaysWithNumbers:_model.repeatDays];
     NSString *tagTitle = nil;
+    NSRange range;
     if (dayString) {
-        tagTitle = [NSString stringWithFormat:@"%@, %@", _model.title, dayString];
+        tagTitle = [NSString stringWithFormat:@"%@,  %@", _model.title, dayString];
+        range = NSMakeRange(0, _model.title.length + 1);
     } else {
         tagTitle = [NSString stringWithFormat:@"%@", _model.title];
+        range = NSMakeRange(0, _model.title.length);
     }
-    NSLog(@"333");
     
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:tagTitle];
-    [text yy_setFont:[UIFont boldSystemFontOfSize:15] range:NSMakeRange(0, _model.title.length + 1)];
+    text.yy_font = [UIFont systemFontOfSize:15];
+    [text yy_setFont:[UIFont boldSystemFontOfSize:15] range: range];
     _titleRepeatLabel.attributedText = text;
+    
+    [self changeLayout:_model.isAlarm];
 }
 
 - (NSString*)getAlarmClockRepeatDaysWithNumbers:(NSArray *)days
@@ -107,7 +105,20 @@
 
 + (CGFloat)fixedHeight
 {
-    return 80;
+    return 90;
+}
+
+- (void)changeLayout:(BOOL)isAlarm
+{
+    if (isAlarm) {
+        _timeLabel.textColor = RGB(109, 109, 109);
+        _titleRepeatLabel.textColor = RGB(109, 109, 109);
+        self.backgroundColor = [UIColor whiteColor];
+    } else {
+        _timeLabel.textColor = RGB(191, 191, 191);
+        _titleRepeatLabel.textColor = RGB(191, 191, 191);
+        self.backgroundColor = WDGlobalBackgroundColor;
+    }
 }
 
 @end

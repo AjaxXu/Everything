@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ZJSwitch.h"
+
 @class WDAlarmClockModel;
 
 @interface WDAlarmClockCell : UITableViewCell
 
 @property (nonatomic, strong) WDAlarmClockModel *model;
+
+@property (nonatomic, strong) ZJSwitch *isAlarmSwitch;
+
+- (void)changeLayout:(BOOL)isAlarm;
 
 + (CGFloat)fixedHeight;
 

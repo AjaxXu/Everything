@@ -29,6 +29,7 @@ PODS:
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
   - SDWebImage/Core (3.8.1)
+  - SWTableViewCell (0.3.7)
   - YYCache (1.0.3)
   - YYImage (1.0.2):
     - YYImage/Core (= 1.0.2)
@@ -47,6 +48,7 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 4.2.1)
   - SDAutoLayout (~> 2.1.3)
   - SDWebImage (~> 3.8.1)
+  - SWTableViewCell (~> 0.3.7)
   - YYCache (~> 1.0.3)
   - YYImage (~> 1.0.2)
   - YYModel (~> 1.0.4)
@@ -64,11 +66,12 @@ SPEC CHECKSUMS:
   Result: 6e722d4a66b1408680dbfcdf51c0b1c4b706316a
   SDAutoLayout: ddf39b38dbd793a4802c8feb6429096aea4aa658
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  SWTableViewCell: 2a94aadc9d47b2b611fa064566bf57948b95b579
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
   YYImage: 2cc79ed49b9549b71c6715cefe7b0f5ab3d33abf
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: ac09660c9ccd9b817f409a20caa6f5587444d2ae
 
-PODFILE CHECKSUM: cd2f2bb375520900f17b7fd48c877d620fd24ece
+PODFILE CHECKSUM: d3b1db26798fcb202fa719b3d64b5db377da918e
 
 COCOAPODS: 1.0.1

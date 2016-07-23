@@ -23,7 +23,7 @@
                        if (image) {
                            NSData *fileData = UIImageJPEGRepresentation(image, 1);
                            //保存到Documents
-                           NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                           NSString *imageDir = WDSearchPathCaches
                            NSString *fileName = [NSString stringWithFormat:@"%@.jpg",[WDUserDefaults objectForKey:kUserID]];
                            
                            NSString *imageFile = [imageDir stringByAppendingPathComponent: fileName];
@@ -40,7 +40,7 @@
         urlString = @"";
     } else {
         NSString *filename = [[urlString componentsSeparatedByString:@"/"] lastObject];
-        NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *imageDir = WDSearchPathCaches
         
         NSString *imageFile = [imageDir stringByAppendingPathComponent: filename];
         NSData * data = [NSData dataWithContentsOfFile:imageFile];

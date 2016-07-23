@@ -157,7 +157,7 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
         }
     }
     vc.hidesBottomBarWhenPushed = YES;
-    vc.view.backgroundColor = RGB(245, 245, 245);
+    vc.view.backgroundColor = WDGlobalBackgroundColor;
     [self.navigationController pushViewController:vc animated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

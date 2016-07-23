@@ -262,7 +262,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     // 压缩图片
     NSData *fileData = UIImageJPEGRepresentation(image, 0.5);
     //保存到Documents
-    NSString *imageDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *imageDir = WDSearchPathCaches
     NSString *fileName = [NSString stringWithFormat:@"%@.jpg",[WDUserDefaults objectForKey:kUserID]];
     
     NSString *imageFile = [imageDir stringByAppendingPathComponent: fileName];
