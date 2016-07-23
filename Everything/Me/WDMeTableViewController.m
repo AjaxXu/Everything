@@ -13,6 +13,7 @@
 #import "WDCellModel.h"
 #import "WDProfileViewController.h"
 #import "WDLoginViewController.h"
+#import "WDAlarmClockViewController.h"
 #import "GlobalDefines.h"
 
 static NSString *const kProfileCellIdentifier = @"ProfileCell";
@@ -135,7 +136,8 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *vc;
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0)
+    {
         if (![WDUserDefaults objectForKey:kUserID])
         {
             vc = [WDLoginViewController new];
@@ -147,9 +149,17 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
             vc = pv;
         }
     }
+    else if(indexPath.section == 1)
+    {
+        if (indexPath.row == 0) {
+            WDAlarmClockViewController *alarmClockVC = [WDAlarmClockViewController new];
+            vc = alarmClockVC;
+        }
+    }
     vc.hidesBottomBarWhenPushed = YES;
-    vc.view.backgroundColor = RGB(245, 245, 245);
+    vc.view.backgroundColor = WDGlobalBackgroundColor;
     [self.navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

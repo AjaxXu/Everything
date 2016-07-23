@@ -62,8 +62,10 @@ static char ActionTag;
     CGFloat imageHeight = self.imageView.image.size.height;
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-    Wdeprecated-declarations"
-    CGFloat labelWidth = [self.titleLabel.text sizeWithFont:self.titleLabel.font].width;
-    CGFloat labelHeight = [self.titleLabel.text sizeWithFont:self.titleLabel.font].height;
+    CGFloat labelWidth = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}].width;
+    //    CGFloat labelWidth = [self.titleLabel.text sizeWithFont:self.titleLabel.font].width;
+//    CGFloat labelHeight = [self.titleLabel.text sizeWithFont:self.titleLabel.font].height;
+    CGFloat labelHeight = [self.titleLabel.text sizeWithAttributes:@{NSFontAttributeName: self.titleLabel.font}].height;
 #pragma clang diagnostic pop
     
     CGFloat imageOffsetX = (imageWidth + labelWidth) / 2 - imageWidth / 2;//image中心移动的x距离

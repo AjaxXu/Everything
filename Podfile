@@ -11,6 +11,7 @@ pod 'SDWebImage', '~>3.8.1'
 pod 'JSPatch', '~>1.1'
 pod 'CocoaSecurity'
 pod 'LCActionSheet'
+pod 'SWTableViewCell', '~> 0.3.7'
 
 use_frameworks!
 pod 'ReactiveCocoa', '~>4.2.1'

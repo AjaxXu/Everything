@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>title</key>
+		<string>闹钟</string>
+		<key>bgm</key>
+		<string>fad</string>
+		<key>repeatDays</key>
+		<array>
+			<integer>1</integer>
+			<integer>2</integer>
+			<integer>3</integer>
+		</array>
+		<key>hour</key>
+		<integer>8</integer>
+		<key>minute</key>
+		<integer>2</integer>
+		<key>alertBody</key>
+		<string>Hello</string>
+		<key>isAlarm</key>
+		<true/>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>闹钟2</string>
+		<key>bgm</key>
+		<string>fad</string>
+		<key>hour</key>
+		<integer>8</integer>
+		<key>minute</key>
+		<integer>20</integer>
+		<key>alertBody</key>
+		<string>Hello</string>
+		<key>isAlarm</key>
+		<false/>
+	</dict>
+</array>
+</plist>
