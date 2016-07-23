@@ -40,6 +40,15 @@
 		BFA12B8B1D41F91600E0221B /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B8A1D41F91600E0221B /* NSDate+Utilities.m */; };
 		BFA12B9C1D4228F400E0221B /* WDLoginEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B9B1D4228F400E0221B /* WDLoginEditView.m */; };
 		BFA12B9F1D4228FC00E0221B /* WDLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */; };
+		BFA12BA21D4229EE00E0221B /* WDAlarmClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BA11D4229EE00E0221B /* WDAlarmClockViewController.m */; };
+		BFA12BBA1D4237DF00E0221B /* TKBaseSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BB51D4237DF00E0221B /* TKBaseSwitcher.swift */; };
+		BFA12BBB1D4237DF00E0221B /* TKExchangeSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BB61D4237DF00E0221B /* TKExchangeSwitch.swift */; };
+		BFA12BBC1D4237DF00E0221B /* TKLiquidSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BB71D4237DF00E0221B /* TKLiquidSwitch.swift */; };
+		BFA12BBD1D4237DF00E0221B /* TKSimpleSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BB81D4237DF00E0221B /* TKSimpleSwitch.swift */; };
+		BFA12BBE1D4237DF00E0221B /* TKSmileSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BB91D4237DF00E0221B /* TKSmileSwitch.swift */; };
+		BFA12BC31D43116E00E0221B /* WDAlarmClockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BC21D43116E00E0221B /* WDAlarmClockModel.m */; };
+		BFA12BC61D4314C600E0221B /* WDAlarmClockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BC51D4314C600E0221B /* WDAlarmClockCell.m */; };
+		BFA12BCA1D43523A00E0221B /* alarm.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BC91D43523A00E0221B /* alarm.plist */; };
 		BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */; };
 		BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2961D31F7350077AD99 /* WDAppFrameTabBarController.m */; };
 		BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2981D31F7350077AD99 /* WDNavigationController.m */; };
@@ -158,6 +167,19 @@
 		BFA12B9B1D4228F400E0221B /* WDLoginEditView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDLoginEditView.m; path = Login/WDLoginEditView.m; sourceTree = "<group>"; };
 		BFA12B9D1D4228FC00E0221B /* WDLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDLoginViewController.h; sourceTree = "<group>"; };
 		BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDLoginViewController.m; sourceTree = "<group>"; };
+		BFA12BA01D4229EE00E0221B /* WDAlarmClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmClockViewController.h; sourceTree = "<group>"; };
+		BFA12BA11D4229EE00E0221B /* WDAlarmClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmClockViewController.m; sourceTree = "<group>"; };
+		BFA12BA41D42328100E0221B /* Everything-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Everything-Bridging-Header.h"; sourceTree = "<group>"; };
+		BFA12BB51D4237DF00E0221B /* TKBaseSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKBaseSwitcher.swift; sourceTree = "<group>"; };
+		BFA12BB61D4237DF00E0221B /* TKExchangeSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKExchangeSwitch.swift; sourceTree = "<group>"; };
+		BFA12BB71D4237DF00E0221B /* TKLiquidSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKLiquidSwitch.swift; sourceTree = "<group>"; };
+		BFA12BB81D4237DF00E0221B /* TKSimpleSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSimpleSwitch.swift; sourceTree = "<group>"; };
+		BFA12BB91D4237DF00E0221B /* TKSmileSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TKSmileSwitch.swift; sourceTree = "<group>"; };
+		BFA12BC11D43116E00E0221B /* WDAlarmClockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmClockModel.h; sourceTree = "<group>"; };
+		BFA12BC21D43116E00E0221B /* WDAlarmClockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmClockModel.m; sourceTree = "<group>"; };
+		BFA12BC41D4314C600E0221B /* WDAlarmClockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmClockCell.h; sourceTree = "<group>"; };
+		BFA12BC51D4314C600E0221B /* WDAlarmClockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmClockCell.m; sourceTree = "<group>"; };
+		BFA12BC91D43523A00E0221B /* alarm.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = alarm.plist; sourceTree = "<group>"; };
 		BFD4E2921D31F7250077AD99 /* WDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppDelegate.h; path = Other/WDAppDelegate.h; sourceTree = "<group>"; };
 		BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDAppDelegate.m; path = Other/WDAppDelegate.m; sourceTree = "<group>"; };
 		BFD4E2951D31F7350077AD99 /* WDAppFrameTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppFrameTabBarController.h; path = Other/WDAppFrameTabBarController.h; sourceTree = "<group>"; };
@@ -395,6 +417,8 @@
 		BFA12B8C1D4227FF00E0221B /* AlarmClock */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BC01D423A8000E0221B /* Models */,
+				BFA12BBF1D423A3800E0221B /* Views */,
 				BFA12B911D42281100E0221B /* Controllers */,
 			);
 			path = AlarmClock;
@@ -435,6 +459,8 @@
 		BFA12B911D42281100E0221B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BA01D4229EE00E0221B /* WDAlarmClockViewController.h */,
+				BFA12BA11D4229EE00E0221B /* WDAlarmClockViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -475,6 +501,36 @@
 				BFA12B9E1D4228FC00E0221B /* WDLoginViewController.m */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		BFA12BB41D4237DF00E0221B /* TKSwitcher */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BB51D4237DF00E0221B /* TKBaseSwitcher.swift */,
+				BFA12BB61D4237DF00E0221B /* TKExchangeSwitch.swift */,
+				BFA12BB71D4237DF00E0221B /* TKLiquidSwitch.swift */,
+				BFA12BB81D4237DF00E0221B /* TKSimpleSwitch.swift */,
+				BFA12BB91D4237DF00E0221B /* TKSmileSwitch.swift */,
+			);
+			path = TKSwitcher;
+			sourceTree = "<group>";
+		};
+		BFA12BBF1D423A3800E0221B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BC41D4314C600E0221B /* WDAlarmClockCell.h */,
+				BFA12BC51D4314C600E0221B /* WDAlarmClockCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BFA12BC01D423A8000E0221B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BC11D43116E00E0221B /* WDAlarmClockModel.h */,
+				BFA12BC21D43116E00E0221B /* WDAlarmClockModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		BFD4E2711D3156CA0077AD99 /* AppDelegate */ = {
@@ -653,6 +709,7 @@
 				BFD4E2901D31F6810077AD99 /* Controllers */,
 				BFD4E2911D31F6810077AD99 /* Views */,
 				BFD4E2A11D3203450077AD99 /* PrefixHeader.pch */,
+				BFA12BA41D42328100E0221B /* Everything-Bridging-Header.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -720,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				BFD4E2B41D325C600077AD99 /* me.plist */,
+				BFA12BC91D43523A00E0221B /* alarm.plist */,
 			);
 			path = plist;
 			sourceTree = "<group>";
@@ -779,6 +837,7 @@
 		BFD4E2E61D33AC710077AD99 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BB41D4237DF00E0221B /* TKSwitcher */,
 				BFA12B7F1D41D19C00E0221B /* ActionSheetPicker */,
 				BF68F1801D374D3C00F77FF3 /* FJChooseCity */,
 				BFE313B81D354869002D6E29 /* SVProgressHUD */,
@@ -929,6 +988,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFA12BCA1D43523A00E0221B /* alarm.plist in Resources */,
 				BFD4E2B51D325C600077AD99 /* me.plist in Resources */,
 				BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */,
 				BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */,
@@ -1028,6 +1088,9 @@
 				BFA12B9C1D4228F400E0221B /* WDLoginEditView.m in Sources */,
 				BFD4E2C71D333D260077AD99 /* WDNetOperation.m in Sources */,
 				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
+				BFA12BA21D4229EE00E0221B /* WDAlarmClockViewController.m in Sources */,
+				BFA12BBA1D4237DF00E0221B /* TKBaseSwitcher.swift in Sources */,
+				BFA12BC61D4314C600E0221B /* WDAlarmClockCell.m in Sources */,
 				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
 				BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */,
 				BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */,
@@ -1046,14 +1109,19 @@
 				BFA12B881D41E48E00E0221B /* WDActionSheetPickerView.m in Sources */,
 				BF68F1B31D374D3C00F77FF3 /* ViewController+MASAdditions.m in Sources */,
 				BFA12B821D41D1EC00E0221B /* WDYearMonthDatePickView.m in Sources */,
+				BFA12BBB1D4237DF00E0221B /* TKExchangeSwitch.swift in Sources */,
 				BFE313C31D354869002D6E29 /* SVProgressAnimatedView.m in Sources */,
 				BFD4E2CF1D3380E00077AD99 /* WDProfileViewController.m in Sources */,
+				BFA12BC31D43116E00E0221B /* WDAlarmClockModel.m in Sources */,
 				BFD4E2AD1D320E440077AD99 /* WDRecordTableViewController.m in Sources */,
 				BF68F17F1D36C7AF00F77FF3 /* WDAutographViewController.m in Sources */,
+				BFA12BBC1D4237DF00E0221B /* TKLiquidSwitch.swift in Sources */,
 				BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */,
 				BFA12B851D41D7A700E0221B /* WDActionSheetViewController.m in Sources */,
 				BFD4E2AA1D320E260077AD99 /* WDCalendarTableViewController.m in Sources */,
 				BF68F1AF1D374D3C00F77FF3 /* MASViewConstraint.m in Sources */,
+				BFA12BBE1D4237DF00E0221B /* TKSmileSwitch.swift in Sources */,
+				BFA12BBD1D4237DF00E0221B /* TKSimpleSwitch.swift in Sources */,
 				BFD4E2EA1D33ACD20077AD99 /* LTInfiniteScrollView.m in Sources */,
 				BFA12B9F1D4228FC00E0221B /* WDLoginViewController.m in Sources */,
 				BFD4E2A71D320DE50077AD99 /* WDHomeTableViewController.m in Sources */,
@@ -1192,12 +1260,17 @@
 			baseConfigurationReference = C78CA0EB9161AFBD1F2E4F5D /* Pods-Everything.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Everything/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.Tsinghua.Everything;
+				PRODUCT_MODULE_NAME = Everything;
 				PRODUCT_NAME = EVE;
+				SWIFT_OBJC_BRIDGING_HEADER = "Everything/Other/Everything-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1206,12 +1279,16 @@
 			baseConfigurationReference = 0788E0A78F01A0DFA46D6B71 /* Pods-Everything.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEFINES_MODULE = YES;
 				INFOPLIST_FILE = Everything/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.Tsinghua.Everything;
+				PRODUCT_MODULE_NAME = Everything;
 				PRODUCT_NAME = EVE;
+				SWIFT_OBJC_BRIDGING_HEADER = "Everything/Other/Everything-Bridging-Header.h";
 			};
 			name = Release;
 		};
