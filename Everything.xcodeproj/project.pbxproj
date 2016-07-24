@@ -46,6 +46,8 @@
 		BFA12BCA1D43523A00E0221B /* alarm.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BC91D43523A00E0221B /* alarm.plist */; };
 		BFA12BCE1D43676900E0221B /* ZJSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BCD1D43676900E0221B /* ZJSwitch.m */; };
 		BFA12BD41D43D82C00E0221B /* WDAlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BD31D43D82C00E0221B /* WDAlarmEditViewController.m */; };
+		BFA12BD81D4466F400E0221B /* WDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BD71D4466F400E0221B /* WDViewController.m */; };
+		BFA12BDB1D44753900E0221B /* WDBillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */; };
 		BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */; };
 		BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2961D31F7350077AD99 /* WDAppFrameTabBarController.m */; };
 		BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2981D31F7350077AD99 /* WDNavigationController.m */; };
@@ -176,6 +178,10 @@
 		BFA12BCD1D43676900E0221B /* ZJSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSwitch.m; sourceTree = "<group>"; };
 		BFA12BD21D43D82C00E0221B /* WDAlarmEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmEditViewController.h; sourceTree = "<group>"; };
 		BFA12BD31D43D82C00E0221B /* WDAlarmEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmEditViewController.m; sourceTree = "<group>"; };
+		BFA12BD61D4466F400E0221B /* WDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDViewController.h; sourceTree = "<group>"; };
+		BFA12BD71D4466F400E0221B /* WDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDViewController.m; sourceTree = "<group>"; };
+		BFA12BD91D44753900E0221B /* WDBillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBillTableViewController.h; sourceTree = "<group>"; };
+		BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBillTableViewController.m; sourceTree = "<group>"; };
 		BFD4E2921D31F7250077AD99 /* WDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppDelegate.h; path = Other/WDAppDelegate.h; sourceTree = "<group>"; };
 		BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDAppDelegate.m; path = Other/WDAppDelegate.m; sourceTree = "<group>"; };
 		BFD4E2951D31F7350077AD99 /* WDAppFrameTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppFrameTabBarController.h; path = Other/WDAppFrameTabBarController.h; sourceTree = "<group>"; };
@@ -466,6 +472,8 @@
 		BFA12B921D42281A00E0221B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BD91D44753900E0221B /* WDBillTableViewController.h */,
+				BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -526,6 +534,15 @@
 				BFA12BCD1D43676900E0221B /* ZJSwitch.m */,
 			);
 			path = ZJSwitch;
+			sourceTree = "<group>";
+		};
+		BFA12BD51D4466CB00E0221B /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BD61D4466F400E0221B /* WDViewController.h */,
+				BFA12BD71D4466F400E0221B /* WDViewController.m */,
+			);
+			name = BaseViewController;
 			sourceTree = "<group>";
 		};
 		BFD4E2711D3156CA0077AD99 /* AppDelegate */ = {
@@ -744,6 +761,7 @@
 		BFD4E2901D31F6810077AD99 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BD51D4466CB00E0221B /* BaseViewController */,
 				BFD4E2731D31DA9D0077AD99 /* BaseTabBarController */,
 				BFD4E2771D31DB1E0077AD99 /* BaseNavigationController */,
 				BFD4E2891D31DF160077AD99 /* BaseTableViewController */,
@@ -1064,6 +1082,7 @@
 				BF68F1AB1D374D3C00F77FF3 /* MASConstraint.m in Sources */,
 				BFE313C21D354869002D6E29 /* SVIndefiniteAnimatedView.m in Sources */,
 				BF68F1A71D374D3C00F77FF3 /* ChooseCityModel.m in Sources */,
+				BFA12BDB1D44753900E0221B /* WDBillTableViewController.m in Sources */,
 				BFD4E2A01D31F8010077AD99 /* UIBarButtonItem+Extension.m in Sources */,
 				BF68F1AA1D374D3C00F77FF3 /* MASCompositeConstraint.m in Sources */,
 				BFD4E29D1D31F7350077AD99 /* WDTableViewController.m in Sources */,
@@ -1091,6 +1110,7 @@
 				BF68F1A61D374D3C00F77FF3 /* CCLocationManager.m in Sources */,
 				BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */,
 				BF68F1B51D374D3C00F77FF3 /* SqlDataBase.m in Sources */,
+				BFA12BD81D4466F400E0221B /* WDViewController.m in Sources */,
 				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
 				BF68F1AE1D374D3C00F77FF3 /* MASViewAttribute.m in Sources */,
 				BFA12B8B1D41F91600E0221B /* NSDate+Utilities.m in Sources */,

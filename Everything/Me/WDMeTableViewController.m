@@ -14,6 +14,7 @@
 #import "WDProfileViewController.h"
 #import "WDLoginViewController.h"
 #import "WDAlarmClockViewController.h"
+#import "WDBillTableViewController.h"
 #import "GlobalDefines.h"
 
 static NSString *const kProfileCellIdentifier = @"ProfileCell";
@@ -155,11 +156,18 @@ static NSString *const kOtherCellIdentifier = @"OtherCell";
             WDAlarmClockViewController *alarmClockVC = [WDAlarmClockViewController new];
             vc = alarmClockVC;
         }
+        else if (indexPath.row == 1) {
+            WDBillTableViewController *billVC = [WDBillTableViewController new];
+            vc = billVC;
+        }
+    }
+    else if(indexPath.section == 2)
+    {
+        
     }
     vc.hidesBottomBarWhenPushed = YES;
     vc.view.backgroundColor = WDGlobalBackgroundColor;
     [self.navigationController pushViewController:vc animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

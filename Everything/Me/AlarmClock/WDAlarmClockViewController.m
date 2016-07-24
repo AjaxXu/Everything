@@ -20,6 +20,7 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
 @interface WDAlarmClockViewController ()
 
 @property (nonatomic, strong) NSMutableArray *alarmArray;
+@property (nonatomic, strong) UIBarButtonItem *backBarButtonItem;
 
 @end
 
@@ -29,6 +30,17 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
     [super viewDidLoad];
     [self setupView];
     [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!_backBarButtonItem) {
+        _backBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"nav_back"
+                                                         imageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 8)
+                                                                  target:self
+                                                                  action:@selector(doBack)];
+        self.navigationItem.leftBarButtonItem = _backBarButtonItem;
+    }
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -91,22 +103,6 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
     return cell;
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellEditingStyleDelete;
-}
-
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
-{
-    WDAlarmClockModel* fromObj = [_alarmArray objectAtIndex:sourceIndexPath.row];
-    [_alarmArray insertObject:fromObj atIndex:destinationIndexPath.row];
-    [_alarmArray removeObjectAtIndex:sourceIndexPath.row];
-}
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
 //设置滑动时显示多个按钮
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     //添加一个删除按钮
@@ -122,7 +118,7 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
     UITableViewRowAction *moreRowAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleNormal) title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         WDAlarmEditViewController *detailVC = [[WDAlarmEditViewController alloc]init];
         detailVC.model = [_alarmArray objectAtIndex:indexPath.row];
-        [self.navigationController pushViewController:detailVC animated:NO];
+        [self.navigationController pushViewController:detailVC animated:YES];
         
     }];
     
@@ -159,6 +155,16 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
 - (void)addClock
 {
     
+}
+
+- (void)doBack
+{
+    //    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
+    //    [WDUserDefaults setObject:userDict forKey:kUserModel];
+    //    [WDUserDefaults synchronize];
+    //    NSString *tableID = [WDUserDefaults objectForKey:kUserID];
+    //    [WDNetOperation postRequestWithURL:[NSString stringWithFormat:@"/users/%@", tableID] parameters:userDict success:nil failure:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

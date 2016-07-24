@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class WDAlarmClockModel;
 
-@interface WDAlarmEditViewController : UIViewController
+@interface WDAlarmEditViewController : UITableViewController
 
 @property (nonatomic, strong) WDAlarmClockModel *model;
 
