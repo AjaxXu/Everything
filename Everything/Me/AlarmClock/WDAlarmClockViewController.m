@@ -41,19 +41,7 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
                                                                   action:@selector(doBack)];
         self.navigationItem.leftBarButtonItem = _backBarButtonItem;
     }
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    NSString *dir = WDSearchPathCaches
-    NSString *filename = [dir stringByAppendingPathComponent:@"alarmclocks.plist"];
-    
-    NSMutableArray *clocks = [NSMutableArray new];
-    for (WDAlarmClockModel *model in _alarmArray) {
-        [clocks addObject:[model yy_modelToJSONObject]];
-    }
-    
-    [clocks writeToFile: filename atomically:YES];
+    [self.tableView reloadData];
 }
 
 - (void)loadData
@@ -117,7 +105,13 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
     //编辑
     UITableViewRowAction *moreRowAction = [UITableViewRowAction rowActionWithStyle:(UITableViewRowActionStyleNormal) title:@"编辑" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         WDAlarmEditViewController *detailVC = [[WDAlarmEditViewController alloc]init];
-        detailVC.model = [_alarmArray objectAtIndex:indexPath.row];
+        detailVC.model = [[_alarmArray objectAtIndex:indexPath.row] copy];
+        detailVC.isNew = NO;
+        WeakSelf
+        [detailVC returnBlock:^(WDAlarmClockModel *model) {
+            [weakSelf.alarmArray replaceObjectAtIndex:indexPath.row withObject:model];
+            [weakSelf.tableView reloadData];
+        }];
         [self.navigationController pushViewController:detailVC animated:YES];
         
     }];
@@ -148,22 +142,33 @@ static NSString *const kAlarmCellIdentifier = @"AlarmCell";
     
     // tableView
     self.tableView.backgroundColor = WDGlobalBackgroundColor;
+    self.tableView.tableFooterView = [UIView new];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     [self.tableView registerClass:[WDAlarmClockCell class] forCellReuseIdentifier:kAlarmCellIdentifier];
 }
 
 - (void)addClock
 {
-    
+    WDAlarmEditViewController *detailVC = [[WDAlarmEditViewController alloc]init];
+    detailVC.model = [WDAlarmClockModel new];
+    detailVC.isNew = YES;
+    WeakSelf
+    [detailVC returnBlock:^(WDAlarmClockModel *model) {
+        [weakSelf.alarmArray addObject:model];
+        [weakSelf.tableView reloadData];
+    }];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)doBack
 {
-    //    NSDictionary *userDict = [_userModel yy_modelToJSONObject];
-    //    [WDUserDefaults setObject:userDict forKey:kUserModel];
-    //    [WDUserDefaults synchronize];
-    //    NSString *tableID = [WDUserDefaults objectForKey:kUserID];
-    //    [WDNetOperation postRequestWithURL:[NSString stringWithFormat:@"/users/%@", tableID] parameters:userDict success:nil failure:nil];
+    NSString *dir = WDSearchPathCaches
+    NSString *filename = [dir stringByAppendingPathComponent:@"alarmclocks.plist"];
+    NSMutableArray *clocks = [NSMutableArray new];
+    for (WDAlarmClockModel *model in _alarmArray) {
+        [clocks addObject:[model yy_modelToJSONObject]];
+    }
+    [clocks writeToFile: filename atomically:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
