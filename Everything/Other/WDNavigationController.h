@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WDNavigationController : UINavigationController
+
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
+
 @end

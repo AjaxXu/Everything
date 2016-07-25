@@ -13,6 +13,7 @@
 #import "WDEditNickNameViewController.h"
 #import "WDAutographViewController.h"
 #import "ChooseCityViewController.h"
+#import "WDNavigationController.h"
 
 static NSString *const kCellIdentifier = @"ProfileCell";
 
@@ -20,6 +21,7 @@ static NSString *const kCellIdentifier = @"ProfileCell";
 
 @property (nonatomic, strong) NSMutableArray *modelArrays;
 @property (nonatomic, strong) NSMutableDictionary *cellHeights;
+@property (nonatomic, strong) UIBarButtonItem *backBarButtonItem;
 
 @end
 
@@ -30,6 +32,17 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     [super viewDidLoad];
     [self setupView];
     [self loadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    if (!_backBarButtonItem) {
+        UIBarButtonItem *backBarButtonItem = [UIBarButtonItem barButtonItemWithImageName:@"nav_back"
+                                                                         imageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 8)
+                                                                                  target:self
+                                                                                  action:@selector(doBack)];
+        self.navigationItem.leftBarButtonItem = backBarButtonItem;
+    }
 }
 
 - (void)loadData
@@ -315,23 +328,6 @@ static NSString *const kCellIdentifier = @"ProfileCell";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.view.backgroundColor = WDGlobalBackgroundColor;
     [self.tableView registerClass:[WDCommonTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, 0, 60, 44);
-    button.backgroundColor = [UIColor clearColor];
-    //设置button正常状态下的图片
-    [button setImage:[UIImage imageNamed:@"nav_back"] forState:UIControlStateNormal];
-    //button图片的偏移量，距上左下右分别(10, 10, 10, 60)像素点
-    button.imageEdgeInsets = UIEdgeInsetsMake(3, -7, 3, 44);
-    [button setTitle:@"我" forState:UIControlStateNormal];
-    //button标题的偏移量，这个偏移量是相对于图片的
-    button.titleEdgeInsets = UIEdgeInsetsMake(0, -28, 0, 0);
-    //设置button正常状态下的标题颜色
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [button addTarget: self action: @selector(doBack) forControlEvents: UIControlEventTouchUpInside];
-    UIBarButtonItem* item=[[UIBarButtonItem alloc]initWithCustomView:button];
-    self.navigationItem.leftBarButtonItem = item;
-    
 }
 
 - (void)doBack

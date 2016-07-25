@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1760A58C3967D62015F12845 /* Pods_Everything.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */; };
 		BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */; };
+		BF64B4501D45EB0700C5FF3E /* WDAlarmMusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF64B44F1D45EB0700C5FF3E /* WDAlarmMusicViewController.m */; };
 		BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */; };
 		BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F17B1D36B85800F77FF3 /* WDEditNickNameViewController.m */; };
 		BF68F17F1D36C7AF00F77FF3 /* WDAutographViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF68F17E1D36C7AF00F77FF3 /* WDAutographViewController.m */; };
@@ -51,6 +52,13 @@
 		BFA12BCA1D43523A00E0221B /* alarm.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BC91D43523A00E0221B /* alarm.plist */; };
 		BFA12BCE1D43676900E0221B /* ZJSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BCD1D43676900E0221B /* ZJSwitch.m */; };
 		BFA12BD41D43D82C00E0221B /* WDAlarmEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BD31D43D82C00E0221B /* WDAlarmEditViewController.m */; };
+		BFA12BD81D4466F400E0221B /* WDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BD71D4466F400E0221B /* WDViewController.m */; };
+		BFA12BDB1D44753900E0221B /* WDBillTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */; };
+		BFA12BE01D4521D300E0221B /* answer_02.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BDD1D4521D300E0221B /* answer_02.caf */; };
+		BFA12BE11D4521D300E0221B /* error_02.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BDE1D4521D300E0221B /* error_02.caf */; };
+		BFA12BE21D4521D300E0221B /* 提醒.caf in Resources */ = {isa = PBXBuildFile; fileRef = BFA12BDF1D4521D300E0221B /* 提醒.caf */; };
+		BFA12BE51D45282000E0221B /* WDSingleTextFiledViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BE41D45282000E0221B /* WDSingleTextFiledViewController.m */; };
+		BFA12BE81D45A42C00E0221B /* WDWeekdaySelectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFA12BE71D45A42C00E0221B /* WDWeekdaySelectViewController.m */; };
 		BFD4E2941D31F7250077AD99 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */; };
 		BFD4E29B1D31F7350077AD99 /* WDAppFrameTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2961D31F7350077AD99 /* WDAppFrameTabBarController.m */; };
 		BFD4E29C1D31F7350077AD99 /* WDNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFD4E2981D31F7350077AD99 /* WDNavigationController.m */; };
@@ -103,6 +111,8 @@
 		47E2A25CA4F8E800C33F05DF /* Pods_Everything.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Everything.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1F979E1D34915C0002AE6A /* UITextField+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Blocks.h"; sourceTree = "<group>"; };
 		BF1F979F1D34915C0002AE6A /* UITextField+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Blocks.m"; sourceTree = "<group>"; };
+		BF64B44E1D45EB0700C5FF3E /* WDAlarmMusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmMusicViewController.h; sourceTree = "<group>"; };
+		BF64B44F1D45EB0700C5FF3E /* WDAlarmMusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmMusicViewController.m; sourceTree = "<group>"; };
 		BF68F1761D363D7800F77FF3 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
 		BF68F1771D363D7800F77FF3 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		BF68F17A1D36B85800F77FF3 /* WDEditNickNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDEditNickNameViewController.h; sourceTree = "<group>"; };
@@ -187,6 +197,17 @@
 		BFA12BCD1D43676900E0221B /* ZJSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSwitch.m; sourceTree = "<group>"; };
 		BFA12BD21D43D82C00E0221B /* WDAlarmEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDAlarmEditViewController.h; sourceTree = "<group>"; };
 		BFA12BD31D43D82C00E0221B /* WDAlarmEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDAlarmEditViewController.m; sourceTree = "<group>"; };
+		BFA12BD61D4466F400E0221B /* WDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDViewController.h; sourceTree = "<group>"; };
+		BFA12BD71D4466F400E0221B /* WDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDViewController.m; sourceTree = "<group>"; };
+		BFA12BD91D44753900E0221B /* WDBillTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBillTableViewController.h; sourceTree = "<group>"; };
+		BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBillTableViewController.m; sourceTree = "<group>"; };
+		BFA12BDD1D4521D300E0221B /* answer_02.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = answer_02.caf; sourceTree = "<group>"; };
+		BFA12BDE1D4521D300E0221B /* error_02.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = error_02.caf; sourceTree = "<group>"; };
+		BFA12BDF1D4521D300E0221B /* 提醒.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "提醒.caf"; sourceTree = "<group>"; };
+		BFA12BE31D45282000E0221B /* WDSingleTextFiledViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDSingleTextFiledViewController.h; sourceTree = "<group>"; };
+		BFA12BE41D45282000E0221B /* WDSingleTextFiledViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDSingleTextFiledViewController.m; sourceTree = "<group>"; };
+		BFA12BE61D45A42C00E0221B /* WDWeekdaySelectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDWeekdaySelectViewController.h; sourceTree = "<group>"; };
+		BFA12BE71D45A42C00E0221B /* WDWeekdaySelectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDWeekdaySelectViewController.m; sourceTree = "<group>"; };
 		BFD4E2921D31F7250077AD99 /* WDAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppDelegate.h; path = Other/WDAppDelegate.h; sourceTree = "<group>"; };
 		BFD4E2931D31F7250077AD99 /* WDAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDAppDelegate.m; path = Other/WDAppDelegate.m; sourceTree = "<group>"; };
 		BFD4E2951D31F7350077AD99 /* WDAppFrameTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDAppFrameTabBarController.h; path = Other/WDAppFrameTabBarController.h; sourceTree = "<group>"; };
@@ -389,7 +410,11 @@
 			children = (
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+				BFA12BDC1D4521D300E0221B /* Sound */,
+>>>>>>> develop
 				BFD4E2B31D325C470077AD99 /* plist */,
 >>>>>>> develop
 				BFD4E2B21D3210840077AD99 /* Images */,
@@ -483,6 +508,10 @@
 				BFA12BA11D4229EE00E0221B /* WDAlarmClockViewController.m */,
 				BFA12BD21D43D82C00E0221B /* WDAlarmEditViewController.h */,
 				BFA12BD31D43D82C00E0221B /* WDAlarmEditViewController.m */,
+				BFA12BE61D45A42C00E0221B /* WDWeekdaySelectViewController.h */,
+				BFA12BE71D45A42C00E0221B /* WDWeekdaySelectViewController.m */,
+				BF64B44E1D45EB0700C5FF3E /* WDAlarmMusicViewController.h */,
+				BF64B44F1D45EB0700C5FF3E /* WDAlarmMusicViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -490,6 +519,8 @@
 		BFA12B921D42281A00E0221B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BD91D44753900E0221B /* WDBillTableViewController.h */,
+				BFA12BDA1D44753900E0221B /* WDBillTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -550,6 +581,27 @@
 				BFA12BCD1D43676900E0221B /* ZJSwitch.m */,
 			);
 			path = ZJSwitch;
+			sourceTree = "<group>";
+		};
+		BFA12BD51D4466CB00E0221B /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BD61D4466F400E0221B /* WDViewController.h */,
+				BFA12BD71D4466F400E0221B /* WDViewController.m */,
+				BFA12BE31D45282000E0221B /* WDSingleTextFiledViewController.h */,
+				BFA12BE41D45282000E0221B /* WDSingleTextFiledViewController.m */,
+			);
+			name = BaseViewController;
+			sourceTree = "<group>";
+		};
+		BFA12BDC1D4521D300E0221B /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				BFA12BDD1D4521D300E0221B /* answer_02.caf */,
+				BFA12BDE1D4521D300E0221B /* error_02.caf */,
+				BFA12BDF1D4521D300E0221B /* 提醒.caf */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		BFD4E2711D3156CA0077AD99 /* AppDelegate */ = {
@@ -768,6 +820,7 @@
 		BFD4E2901D31F6810077AD99 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BFA12BD51D4466CB00E0221B /* BaseViewController */,
 				BFD4E2731D31DA9D0077AD99 /* BaseTabBarController */,
 				BFD4E2771D31DB1E0077AD99 /* BaseNavigationController */,
 				BFD4E2891D31DF160077AD99 /* BaseTableViewController */,
@@ -1010,9 +1063,12 @@
 				BFA12BCA1D43523A00E0221B /* alarm.plist in Resources */,
 				BFD4E2B51D325C600077AD99 /* me.plist in Resources */,
 				BF9473EB1D2EAA6600D414D9 /* LaunchScreen.storyboard in Resources */,
+				BFA12BE01D4521D300E0221B /* answer_02.caf in Resources */,
 				BF9473E81D2EAA6600D414D9 /* Assets.xcassets in Resources */,
 				BF68F1B41D374D3C00F77FF3 /* meituan_cities.db in Resources */,
 				BFE313C41D354869002D6E29 /* SVProgressHUD.bundle in Resources */,
+				BFA12BE21D4521D300E0221B /* 提醒.caf in Resources */,
+				BFA12BE11D4521D300E0221B /* error_02.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,9 +1151,14 @@
 				BF68F1AB1D374D3C00F77FF3 /* MASConstraint.m in Sources */,
 				BFE313C21D354869002D6E29 /* SVIndefiniteAnimatedView.m in Sources */,
 				BF68F1A71D374D3C00F77FF3 /* ChooseCityModel.m in Sources */,
+<<<<<<< HEAD
+>>>>>>> develop
+=======
+				BFA12BDB1D44753900E0221B /* WDBillTableViewController.m in Sources */,
 >>>>>>> develop
 				BFD4E2A01D31F8010077AD99 /* UIBarButtonItem+Extension.m in Sources */,
 				BF68F1AA1D374D3C00F77FF3 /* MASCompositeConstraint.m in Sources */,
+				BF64B4501D45EB0700C5FF3E /* WDAlarmMusicViewController.m in Sources */,
 				BFD4E29D1D31F7350077AD99 /* WDTableViewController.m in Sources */,
 				BF68F1B01D374D3C00F77FF3 /* NSArray+MASAdditions.m in Sources */,
 				BFD4E2B01D320E5B0077AD99 /* WDMeTableViewController.m in Sources */,
@@ -1131,12 +1192,15 @@
 				BFD4E2B91D3266950077AD99 /* WDUserTableViewCell.m in Sources */,
 				BFA12BA21D4229EE00E0221B /* WDAlarmClockViewController.m in Sources */,
 				BFA12BC61D4314C600E0221B /* WDAlarmClockCell.m in Sources */,
+				BFA12BE51D45282000E0221B /* WDSingleTextFiledViewController.m in Sources */,
+				BFA12BE81D45A42C00E0221B /* WDWeekdaySelectViewController.m in Sources */,
 				BFD4E2C01D329AFC0077AD99 /* UIImageView+Extension.m in Sources */,
 				BF68F17C1D36B85800F77FF3 /* WDEditNickNameViewController.m in Sources */,
 				BF68F1781D363D7800F77FF3 /* NSDictionary+Extension.m in Sources */,
 				BF68F1A61D374D3C00F77FF3 /* CCLocationManager.m in Sources */,
 				BF1F97A01D34915C0002AE6A /* UITextField+Blocks.m in Sources */,
 				BF68F1B51D374D3C00F77FF3 /* SqlDataBase.m in Sources */,
+				BFA12BD81D4466F400E0221B /* WDViewController.m in Sources */,
 				BFD4E2C31D329BA40077AD99 /* UIImage+Extension.m in Sources */,
 				BF68F1AE1D374D3C00F77FF3 /* MASViewAttribute.m in Sources */,
 				BFA12B8B1D41F91600E0221B /* NSDate+Utilities.m in Sources */,

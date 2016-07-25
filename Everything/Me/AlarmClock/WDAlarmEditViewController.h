@@ -9,8 +9,14 @@
 #import <UIKit/UIKit.h>
 @class WDAlarmClockModel;
 
+typedef void (^ReturnAlarmModel)(WDAlarmClockModel *model);
+
 @interface WDAlarmEditViewController : UIViewController
 
 @property (nonatomic, strong) WDAlarmClockModel *model;
+@property (nonatomic, assign) BOOL isNew;
+@property (nonatomic, copy) ReturnAlarmModel block;
+
+- (void)returnBlock: (ReturnAlarmModel)returnBlock;
 
 @end
